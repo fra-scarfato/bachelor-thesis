@@ -195,7 +195,7 @@ Il sistema di inferenze che viene definito di seguito è detto \emph{superpositi
         in cui $\theta$ è l'unificatore più generale di $s$ e $t$, $t\theta \prec s\theta$ e $t'\theta\prec t\theta$.
     \end{itemize}
 \end{definition}
-Se la funzione di selezione seleziona sua letterali negativi sia tutti i letterali massimali, allora è possibile enunciare la seguente proprietà: 
+Se la funzione di selezione seleziona sia letterali negativi sia tutti i letterali massimali, allora è possibile enunciare la seguente proprietà: 
 \begin{property}\label{sup}
     Il superposition inference system è sound e completo.
 \end{property}
@@ -220,6 +220,30 @@ In generale, un algoritmo di saturazione è composto dalle seguenti fasi:
     \item Viene inizializzato un insieme $S$ in cui vengono memorizzate le clausole
     \item Viene selezionata un'inferenza che può essere applicata a delle clausole presenti in $S$
     \item Nel caso fosse generato un risultato, allora viene aggiunto a $S$
+    \item Se viene trovata una clausola vuota $\square$, allora il problema è insoddisfacibile
 \end{enumerate}
 Se un'inferenza genera una clausola, allora è detta generatrice. Le inferenze generatrici 
 sono strettamente collegate alle regole di semplificazioni.
+\textsc{Vampire} implementa tre tipi di algoritmi di saturazione: \emph{limited resource strategy}(lrs), \emph{otter} e \emph{discount}.
+Tutti fanno parte della famiglia dei \emph{given clause algorithm}.
+\begin{algorithm}
+    \caption{Given clause algorithm}
+    \begin{algorithmic}[1]
+        \State \textbf{var} active,passive : sets of clause 
+        \State \textbf{var} current,new : clause
+        \State active = $\emptyset$
+        \State passive = set of input clauses
+        \While{passive $\neq \emptyset$}
+            \State current = \emph{select}(passive)
+            \State passive = passive $\setminus$ $\{\text{current}\}$
+            \State active = active $\cup$ $\{\text{current}\}$
+            \State new = \emph{infer}(current,active)
+            \If{new is $\square$}
+                \State \underline{\textbf{return} provable}
+            \EndIf
+            \State passive = passive $\cup$ $\{\text{new}\}$ 
+        \EndWhile
+        \State \underline{\textbf{return} unprovable}
+    \end{algorithmic}
+\end{algorithm}
+\cite{kovacs2013first,riazanov2002design,reger2016new}

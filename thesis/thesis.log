@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  5 JAN 2024 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  5 JAN 2024 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1374,36 +1374,36 @@ Package csquotes Info: Redefining alias 'default' -> 'italian'.
  (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input line 90.
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for LS1/libertinust1math/m/n on input line 93.
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1math on input line 93.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertinust1math/ls1libertinust1math.fd
 File: ls1libertinust1math.fd 2016/03/23 Fontinst v1.933 font definitions for LS1/libertinust1math.
 )
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input line 90.
-LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym on input line 90.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for LS2/libertinust1mathsym/m/n on input line 93.
+LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathsym on input line 93.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertinust1math/ls2libertinust1mathsym.fd
 File: ls2libertinust1mathsym.fd 2015/04/17 v1.1.2-latex LibertinusT1Mathsym LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1440,21 +1440,21 @@ LaTeX Font Info:    ... okay on input line 90.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 90.
-Package microtype Info: Applying patch `item' on input line 90.
-Package microtype Info: Applying patch `toc' on input line 90.
-Package microtype Info: Applying patch `eqnum' on input line 90.
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 90.
+Package microtype Warning: Unable to apply patch `footnote' on input line 93.
 
-Package microtype Info: Applying patch `verbatim' on input line 90.
+Package microtype Info: Applying patch `verbatim' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 90.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1462,7 +1462,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Alegreya-LF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 93.
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
@@ -1497,8 +1497,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \expandedtextwidth=\skip112
 \c@mv@tabular=\count556
 \c@mv@boldtabular=\count557
-LaTeX Info: Command `\dddot' is already robust on input line 90.
-LaTeX Info: Command `\ddddot' is already robust on input line 90.
+LaTeX Info: Command `\dddot' is already robust on input line 93.
+LaTeX Info: Command `\ddddot' is already robust on input line 93.
 \c@lstlisting=\count558
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
@@ -1506,8 +1506,8 @@ Package caption Info: changepage package is loaded.
 \caption@adjustwidth@linewidth=\dimen358
 Package caption Info: End \AtBeginDocument code.
 \Etoc@tf=\read6
-LaTeX Info: Redefining \it@ocap on input line 90.
-LaTeX Info: Redefining \it@ccap on input line 90.
+LaTeX Info: Redefining \it@ocap on input line 93.
+LaTeX Info: Redefining \it@ccap on input line 93.
 
 
 File italian.ldf warning: 
@@ -1515,7 +1515,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 90.
+italian.ldf    on input line 93.
 
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.16).
 
@@ -1541,43 +1541,43 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
  (./thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 90.
-Package biblatex Info: Reference segment=0 on input line 90.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 18.14404pt on input line 94.
+(Font)              scaled to size 18.14404pt on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/sc' in size <17.28> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/sc' will be
-(Font)              scaled to size 18.14404pt on input line 94.
-<logo-federico-II.pdf, id=31, 501.79471pt x 499.8675pt>
+(Font)              scaled to size 18.14404pt on input line 97.
+<logo-federico-II.pdf, id=35, 501.79471pt x 499.8675pt>
 File: logo-federico-II.pdf Graphic file (type pdf)
 <use logo-federico-II.pdf>
-Package pdftex.def Info: logo-federico-II.pdf  used on input line 94.
+Package pdftex.def Info: logo-federico-II.pdf  used on input line 97.
 (pdftex.def)             Requested size: 99.58464pt x 99.20135pt.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <14.4> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 15.12003pt on input line 94.
+(Font)              scaled to size 15.12003pt on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/sc' will be
-(Font)              scaled to size 15.12003pt on input line 94.
+(Font)              scaled to size 15.12003pt on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <24.88> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 26.12407pt on input line 94.
+(Font)              scaled to size 26.12407pt on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/sc' in size <24.88> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/sc' will be
-(Font)              scaled to size 26.12407pt on input line 94.
+(Font)              scaled to size 26.12407pt on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 94.
+(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/n' will be
-(Font)              scaled to size 15.12003pt on input line 94.
+(Font)              scaled to size 15.12003pt on input line 97.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
 
  []
 
@@ -1586,19 +1586,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--94
 
 
 {d:/Utility/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_hnbre7.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_2vgxay.enc} <./logo-federico-II.pdf>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 
  []
 
 File: logo-federico-II.pdf Graphic file (type pdf)
 <use logo-federico-II.pdf>
-Package pdftex.def Info: logo-federico-II.pdf  used on input line 95.
+Package pdftex.def Info: logo-federico-II.pdf  used on input line 98.
 (pdftex.def)             Requested size: 515.22122pt x 513.28278pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95     \makefrontespizioalt
+l.98     \makefrontespizioalt
                              ~\clearpage [1
 
 
@@ -1606,48 +1606,48 @@ l.95     \makefrontespizioalt
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95     \makefrontespizioalt~\clearpage
+l.98     \makefrontespizioalt~\clearpage
                                          [2]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 102.
+(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/n' will be
-(Font)              scaled to size 26.12407pt on input line 102.
-LaTeX Font Info:    Trying to load font information for OT1+AlegreyaSans-LF on input line 102.
+(Font)              scaled to size 26.12407pt on input line 105.
+LaTeX Font Info:    Trying to load font information for OT1+AlegreyaSans-LF on input line 105.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/alegreya/OT1AlegreyaSans-LF.fd
 File: OT1AlegreyaSans-LF.fd 2019/10/08 (autoinst) Font definitions for OT1/AlegreyaSans-LF.
 )
 LaTeX Font Info:    Font shape `OT1/AlegreyaSans-LF/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/AlegreyaSans-LF/bold/n' tried instead on input line 102.
+(Font)              Font shape `OT1/AlegreyaSans-LF/bold/n' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/AlegreyaSans-LF/bold/n' will be
-(Font)              scaled to size 24.88pt on input line 102.
+(Font)              scaled to size 24.88pt on input line 105.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `AlegreyaSans-LF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/n' in size <12> not available
-(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 102.
+(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/n' will be
-(Font)              scaled to size 12.60004pt on input line 102.
+(Font)              scaled to size 12.60004pt on input line 105.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/sc' in size <12> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 102.
+(Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/sc' will be
-(Font)              scaled to size 12.60004pt on input line 102.
-LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathex on input line 102.
+(Font)              scaled to size 12.60004pt on input line 105.
+LaTeX Font Info:    Trying to load font information for LS2+libertinust1mathex on input line 105.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertinust1math/ls2libertinust1mathex.fd
 File: ls2libertinust1mathex.fd 2016/03/15 v1.0.0-latex LibertinusMath extensions LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb on input line 102.
+LaTeX Font Info:    Trying to load font information for LS1+libertinust1mathbb on input line 105.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertinust1math/ls1libertinust1mathbb.fd
 File: ls1libertinust1mathbb.fd 2016/08/22 latex LibertinusT1Mathbb LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 102.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 105.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 102.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 105.
  (d:/Utility/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [3
 
 
@@ -1691,22 +1691,22 @@ LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/it' will be
  [1
 
 {d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_nwaz6g.enc}] (./figures/architettura.pdf_tex
-<./figures/architettura.pdf, id=76, page=1, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=81, page=1, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 1>
 Package pdftex.def Info: ./figures/architettura.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=77, page=2, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=82, page=2, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 2>
 Package pdftex.def Info: ./figures/architettura.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=78, page=3, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=83, page=3, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 3>
 Package pdftex.def Info: ./figures/architettura.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=79, page=4, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=84, page=4, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 4>
 Package pdftex.def Info: ./figures/architettura.pdf , page4 used on input line 62.
@@ -1784,41 +1784,37 @@ LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/it' in size <12> not available
 (Font)              Font shape `OT1/Alegreya-LF/bold/it' tried instead on input line 210.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/it' will be
 (Font)              scaled to size 12.60004pt on input line 210.
- [6]) [7]
+ [6]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 230.
+) [7] [8
 
-LaTeX Warning: Empty bibliography on input line 121.
-
-
-Package caption Warning: Unused \captionsetup[algorithm] on input line 90.
-See the caption package documentation for explanation.
-
-(./thesis.aux)
+] [9] (./thesis.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B7E1AF4C545896EB6D62BC8B12516E8A;757.
+(rerunfilecheck)             Checksum: 300D61399CC88DF0D3589E2789E266EA;861.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55404 strings out of 474934
- 1214143 string characters out of 5759822
- 2102681 words of memory out of 5000000
- 75793 multiletter control sequences out of 15000+600000
- 715649 words of font info for 235 fonts, out of 8000000 for 9000
+ 55677 strings out of 474934
+ 1219875 string characters out of 5759822
+ 2103904 words of memory out of 5000000
+ 76045 multiletter control sequences out of 15000+600000
+ 716698 words of font info for 242 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 132i,13n,135p,1045b,1338s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 132i,13n,135p,1045b,1429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 <d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Bold.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-BoldItalic.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Italic.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Regular.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Bold.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (13 pages, 620252 bytes).
+Output written on thesis.pdf (15 pages, 627411 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 70742 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
+ 59 named destinations out of 1000 (max. 500000)
+ 70750 words of extra memory for PDF output out of 74296 (max. 10000000)
 

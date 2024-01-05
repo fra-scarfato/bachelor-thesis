@@ -2361,6 +2361,9 @@
     <bcf:datasource type="file" datatype="bibtex">bib/bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">kovacs2013first</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">riazanov2002design</bcf:citekey>
+    <bcf:citekey order="1" intorder="3">reger2016new</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

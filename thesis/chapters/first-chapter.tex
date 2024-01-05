@@ -1,0 +1,225 @@
+\chapter{Panoramica su Vampire}
+In questo capitolo viene presentato il theorem prover \textsc{Vampire}, la sua architettura e alcune
+delle caratteristiche più importanti.
+
+\section{Cos'è \textsc{Vampire}}
+\textsc{Vampire} è un sistema che permette di provare la validità di teoremi (matematici e non) di logica del primo ordine. 
+Il linguaggio di programmazione usato è C++ e la prima versione è stata sviluppata principalmente 
+da Andrei Voronkov e Krystof Hoder tra il 1993 e il 1995 nell'Università di Manchester. Dopo il 1995, 
+il progetto è stato sospeso e viene ripreso nel 1998. Dal '98 vengono implementate numerose versioni e, 
+ancora oggi, proseguono gli sviluppi. \textsc{Vampire} ha vinto circa 45 titoli in diverse divisioni 
+della CASC (CADE ATP System Competition) che è il campionato mondiale per gli ATP (Automated Theorem Prover).
+Ecco alcune delle principali caratteristiche del sistema:
+\begin{itemize}
+    \item è molto veloce
+    \item è portabile sulle piattaforme più comuni
+    \item è semplice da usare
+    \item ha strategie di ricerca con risorse limitate
+    \item supporta numerose sintassi in input
+    \item i vari tentativi per provare il problema possono essere parallelizzati su più processori
+    \item può produrre, in base alle opzioni selezionate, output molto dettagliati 
+\end{itemize}
+\section{Architettura di \textsc{Vampire}}
+\textsc{Vampire} ha un'architettura complessa ma, analizzandola da un alto livello, è possibile riconoscere tre moduli 
+principali:
+\begin{enumerate}
+    \item \emph{parser}
+    \item \emph{preprocessor}
+    \item \emph{kernel}
+\end{enumerate}
+\begin{figure}[H]
+    \incfig{architettura}
+\end{figure}
+
+
+\subsection{Parser}
+Il \emph{parser} è un modulo adibito al parsing del problema. Il problema viene letto da un file e viene incapsulato in una classe.
+Nel caso di un problema di logica del primo ordine con sintassi TPTP, allora viene diviso in più unità.
+Ogni unità è una formula o una clausola a cui viene assegnato uno specifico tag in base al tipo (ipotesi, assioma, congettura, teorema, \dots).
+Nel codice sorgente sono presenti le classi \verb|Problem|, \verb|Unit|, \verb|Formula|, \verb|Clause| e sono in relazione tra loro come mostrato nella figura \ref{fig:relazioni-classi}.
+Oltre alle rappresentate \verb|NegatedFormula| e \verb|QuantifiedFormula|, sono presenti altre classi che ereditano \verb|Formula| come
+\verb|AtomicFormula|, \verb|JunctionFormula|, \verb|BinaryFormula|, \dots
+\begin{remark}
+    Un' unità può essere una formula o una clausola ma non entrambe. La distinzione viene effettuata sulla base dell'
+    attributo \emph{kind} che è un' enumerazione.
+\end{remark}
+\vspace{.3cm}
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{class}{Problem}{-5,0}
+            \attribute{- units : UnitList*}
+        \end{class}
+        \begin{class}{Unit}{-5,-2}
+            \attribute{- kind : enum}
+            \operation{+ getFormula()}
+            \operation{+ asClause()}
+        \end{class}
+        \begin{class}{Formula}{-10,-5}
+        \end{class}
+        \begin{class}{Clause}{0,-5}
+        \end{class}
+        \begin{class}{QuantifiedFormula}{-10,-8}
+            \inherit{Formula}
+        \end{class}
+        \begin{class}{NegatedFormula}{-4,-8}
+            \inherit{Formula}
+        \end{class}
+    
+        \unidirectionalAssociation{Problem}{}{}{Unit}
+        \unidirectionalAssociation{Unit}{}{}{Formula}
+        \unidirectionalAssociation{Unit}{}{}{Clause}
+    \end{tikzpicture}
+    \caption{Relazioni tra le classi}\label{fig:relazioni-classi}
+\end{figure}
+\subsection{Preprocessor}
+Il \emph{\emph{preprocessor}} è un modulo che processa il problema in modo che sia trattabile dal \emph{kernel} in fase di risoluzione.
+Per questo modulo è possibile abilitare numerose opzioni, inoltre vengono eseguite molte semplificazioni in modo da rendere il sistema il 
+più veloce possibile. Di seguito sono descritti solo i passaggi fondamentali: 
+\begin{description}
+    \item[I step] \emph{Rectify} $\longrightarrow$ Il \emph{preprocessor} verifica se una formula ha variabili libere. Se la formula è aperta, 
+    allora genera dei quantificatori per vincolare le variabili libere. Inoltre, verifica che per ogni variabile $x$ ci sia una sola occorrenza di $\exists x$ o $\forall x$. 
+    \item[II step] \emph{Simplify} $\longrightarrow$ Il \emph{preprocessor} verifica se una formula contiene $\top$ o $\bot$. Nel caso la formula contenesse uno dei due, allora
+    viene semplificata.
+    \item[III step] \emph{Flatten} $\longrightarrow$ Il \emph{preprocessor} trasforma le formule in modo da renderle uniformi. Questo è solo uno step di formattazione che verrà eseguito più volte nel corso del preprocessing.
+    \item[IV step] \emph{Unused definitions and pure predicate removal} $\longrightarrow$ Il \emph{preprocessor} rimuove i predicati e le definizioni delle funzioni che non vengono usati.
+    \item[V step] \emph{ENNF} $\longrightarrow$ Il \emph{preprocessor} trasforma le formula in modo da ottenerle in \emph{extended negative normal form}.
+    \begin{definition}
+        Una formula è in \emph{extended negation normal form} se non contiene $\rightarrow$ e tutte le $\neg$ sono spostate, il più possibile, verso l'interno.  
+    \end{definition}
+    \item[VI step] \emph{Naming} $\longrightarrow$ Il \emph{preprocessor} definisce un nuovo predicato $p$ che viene usato come nome di una sotto-formula. 
+    Questa tecnica viene utilizzata per evitare di generare un numero esponenziale di clausole nei prossimi passaggi di preprocessing.
+    \begin{definition}
+        Sia $\varphi|_\pi$ sotto-formula di $\varphi$ in posizione $\pi$ con variabili libere $\bar{x}$, allora si sostituisce $\varphi|_\pi$ con $p(\bar{x})$
+        nuovo predicato e viene aggiunta la definizione $\text{def}(\varphi,\pi,p)$ tale che
+        \[\text{def}(\varphi,\pi,p)=\begin{cases}
+            \forall \bar{x} (p(\bar{x})\rightarrow \varphi|_\pi) & \text{se pol}(\varphi,\pi)=1\\
+            \forall \bar{x} (\varphi|_\pi\rightarrow p(\bar{x})) & \text{se pol}(\varphi,\pi)=-1\\
+            \forall \bar{x} (p(\bar{x})\leftrightarrow \varphi|_\pi) & \text{se pol}(\varphi,\pi)=0\\
+        \end{cases}\]
+        in cui $\text{pol}(\varphi,\pi)$ indica la polarità della sotto-formula di $\varphi$ in posizione $\pi$. $\text{pol}(\varphi,\pi)=0$ si verifica quando il simbolo di livello superiore di $\varphi|_\pi$ è 
+        $\leftrightarrow$ o $\otimes$.   
+    \end{definition}
+    \begin{remark}
+        Questa tecnica viene adottata solo se il numero di clausole generate supera una certa soglia. Infatti, in 
+        \textsc{Vampire}, nella classe \verb|Naming|, è presente un attributo \emph{threshold} che indica proprio questo limite.
+    \end{remark}
+    \item[VII step] \emph{NNF} $\longrightarrow$ Il \emph{preprocessor} trasforma le formula in modo da ottenerle in \emph{negation normal form}.
+    \begin{definition}
+        Una formula è in \emph{negation normal form} se non contiene $\rightarrow,\leftrightarrow,\otimes$ e tutte le $\neg$ sono spostate, il più possibile, verso l'interno.
+    \end{definition}
+    \item[VIII step] \emph{Skolemization} $\longrightarrow$ Il \emph{preprocessor} applica la tecnica di skolemizzazione per eliminare i $\exists$ dalle formule.
+    \begin{definition}
+        Sia $F=\exists x\mid\varphi(y_1,\dots,y_n,x)$ formula in negation normal form allora la skolemizzazione si ottiene tramite la seguente sostituzione:
+        \[F=\exists x\mid\varphi(y_1,\dots,y_n,x)\Rightarrow F'=\varphi(y_1,\dots,y_n,x)\{x \mapsto sk(y_1,\dots,y_n)\}\]
+        in cui $\{x \mapsto sk(y_1,\dots,y_n)\}$ indica che $x$, la variabile precedentemente vincolata dal quantificatore esistenziale nella formula $F$, 
+        è sostituita da una nuova funzione $sk(y_1,\dots,y_n)$, detta di Skolem, nella formula $F'$.
+    \end{definition}
+    \item[IX step] \emph{Clausification} $\longrightarrow$ Il \emph{preprocessor} applica la clausificazione su tutte le formule in modo da ottenere 
+    un insieme di clausole.
+    \begin{definition}
+        La clausificazione è il risultato di:
+        \begin{enumerate}
+            \item $\forall x\mid\varphi(y_1,\dots,y_n,x)\Rightarrow\varphi(y_1,\dots,y_n,x)\{x \mapsto X\}$  in cui $X$ è una variabile designata che non occorre in $\varphi$
+            \item Se una formula $F=\varphi'\land\varphi''$ allora viene spezzata in due unità diverse 
+            $F'=\varphi'$ e $F''=\varphi''$
+        \end{enumerate}
+    \end{definition}  
+\end{description} 
+Alla fine di questi step, l'insieme di clausole risultanti è pronto per essere passato all'algoritmo di \emph{resolution}.
+\subsection{Kernel}
+Il \emph{kernel} è il sotto-sistema adibito alla risoluzione del problema. Per raggiungere questo obiettivo, 
+viene implementato un algoritmo di saturazione che permette di trovare una confutazione all'insieme di clausole.
+Questo è possibile tramite la saturazione dell'insieme con tutte le possibili inferenze presenti nel calcolo. 
+\textsc{Vampire} possiede numerose inferenze ma è possibile sceglierne un sottoinsieme e definire un sistema 
+d'inferenze per la logica del primo ordine.
+
+Formalmente, per definire un sistema d'inferenze bisogna prima definire un \emph{simplification ordering} e una funzione di selezione.
+\begin{definition}
+    Un ordinamento $\succ$ sui termini è detto \emph{simplification ordering} se rispetta le seguenti condizioni:
+    \begin{enumerate}
+        \item $\succ$ è ben formato ovvero $\nexists t_0,t_1, \dots \text{sequenza infinita tale che } t_0 \succ t_1 \succ \dots$
+        \item $\succ$ è monotona ovvero $l \succ r \rightarrow s(l)\succ s(r)$ per tutti i termini $s,l,r$
+        \item $\succ$ è stabile per la sostituzione ovvero $l \succ r \rightarrow l\theta \succ r\theta$
+        \item $\succ$ ha la \emph{subterm property} ovvero se $r$ sottotermine di $l$ e $l\neq r$ allora $l\succ r$   
+    \end{enumerate}
+\end{definition}
+Questa definizione è estendibile agli atomi, ai letterali e alle clausole.
+\begin{definition}
+    Una funzione di selezione seleziona un sottoinsieme non vuoto di letterali in ogni clausola non vuota. In $\underline{L}\lor R$ \underline{L} indica il letterale selezionato.
+\end{definition}
+Il sistema di inferenze che viene definito di seguito è detto \emph{superposition inference system}.
+\begin{definition}
+    Il \emph{superposition inference system} è un sistema di inferenze composto dalle seguenti regole
+    \begin{itemize}
+        \item \textbf{Resolution}
+        \begin{equation}
+            \begin{gathered}
+                \underline{\underline{A} \lor C_1 \quad\underline{\lnot A'}\lor C_2}\\
+                (C_1 \lor C_2)\theta
+            \end{gathered}
+        \end{equation}
+        in cui $\theta$ è l'unificatore più generale di $A$ e $A'$.
+        \item \textbf{Factoring}
+        \begin{equation}
+            \begin{gathered}
+                \underline{\underline{A} \lor \underline{A'} \lor C}\\
+                (A \lor C)\theta
+            \end{gathered}
+        \end{equation}
+        in cui $\theta$ è l'unificatore più generale di $A$ e $A'$.
+        \item \textbf{Superposition}
+        \begin{equation}
+            \begin{gathered}
+                \underline{\underline{l=r} \lor C_1 \quad \underline{L[s]}\lor C_2} \quad \underline{\underline{l=r} \lor C_1 \quad \underline{t[s]=t'}\lor C_2} \quad \underline{\underline{l=r} \lor C_1 \quad \underline{t[s]\neq t'}\lor C_2}\\
+                (L[r] \lor C_1 \lor C_2)\theta \qquad (t[r]=t' \lor C_1 \lor C_2)\theta \qquad (t[r]\neq t' \lor C_1 \lor C_2)\theta
+            \end{gathered}
+        \end{equation}
+        in cui $\theta$ è l'unificatore più generale di $l$ e $s$, $s$ non è una variabile, 
+        $r\theta\prec l\theta$, solo nella prima regola $L[s]$ non è un \emph{equality literal}\footnote{Un \emph{equality literal} è una clausola 
+        con un singolo letterale in cui è presente un =},
+        \item \textbf{Equality resolution}
+        \begin{equation}
+            \begin{gathered}
+                \underline{\underline{s\neq t} \lor C}\\
+                C\theta
+            \end{gathered}
+        \end{equation}
+        in cui $\theta$ è l'unificatore più generale di $s$ e $t$.
+        \item \textbf{Equality factoring}
+        \begin{equation}
+            \begin{gathered}
+                \underline{\underline{s=t} \lor \underline{s'=t'}\lor C}\\
+                (s=t \lor t\neq t' \lor C)\theta
+            \end{gathered}
+        \end{equation}
+        in cui $\theta$ è l'unificatore più generale di $s$ e $t$, $t\theta \prec s\theta$ e $t'\theta\prec t\theta$.
+    \end{itemize}
+\end{definition}
+Se la funzione di selezione seleziona sua letterali negativi sia tutti i letterali massimali, allora è possibile enunciare la seguente proprietà: 
+\begin{property}\label{sup}
+    Il superposition inference system è sound e completo.
+\end{property}
+Una volta definito un sistema di inferenze, è possibile formalizzare il concetto di saturazione espresso precedentemente.
+\begin{definition}
+    Un insieme di clausole $S$ è detto saturato rispetto al sistema di inferenze $\phi$ se, 
+    per ogni inferenza in $\phi$ con le premesse in $S$, la conclusione dell'inferenza appartiene sempre
+    a $S$. 
+\end{definition}
+Grazie alla proprietà \ref{sup}, si ottiene questa importante proprietà:
+\begin{property}
+    Un insieme di clausole è \textbf{insoddisfacibile} se, e solo se, il più piccolo insieme di clausole contenente $S$, saturato 
+    rispetto al superposition inference system, contiene anche la clausola vuota $\square$
+\end{property}
+
+Per rendere efficiente l'algoritmo di saturazione, oltre a queste regole, vengono introdotte
+regole di semplificazione per eliminare ridondanze e semplificare le inferenze. Alcune di queste regole sono: \emph{demodulation},
+\emph{branch demodulation} e \emph{subsumption resolution}. 
+
+In generale, un algoritmo di saturazione è composto dalle seguenti fasi:
+\begin{enumerate}
+    \item Viene inizializzato un insieme $S$ in cui vengono memorizzate le clausole
+    \item Viene selezionata un'inferenza che può essere applicata a delle clausole presenti in $S$
+    \item Nel caso fosse generato un risultato, allora viene aggiunto a $S$
+\end{enumerate}
+Se un'inferenza genera una clausola, allora è detta generatrice. Le inferenze generatrici 
+sono strettamente collegate alle regole di semplificazioni.

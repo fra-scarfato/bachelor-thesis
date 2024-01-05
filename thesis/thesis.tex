@@ -1,0 +1,127 @@
+\documentclass[
+    %uninadraft,
+    %colorlinks, 
+    blacklinks,
+    %palatino,
+    %libertine,
+    %mathpazo,
+    %tgschola,
+    %tgscholamathpazo,
+    alegreya
+]{uninathesis}
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %remove page number from toc
+
+\usepackage[italian]{babel}
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {\sffamily Contents}%
+}
+
+% Math
+\RequirePackage{mathtools}
+\RequirePackage{mathrsfs} %need this for mathscr
+\let\openbox\relax
+\RequirePackage{amsthm}
+\RequirePackage{stmaryrd} %for \llbracket
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{property}{Proprietà}
+\theoremstyle{definition}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Example}
+\newtheorem*{remark}{Nota bene}
+
+% Tikz - may be removed if unneeded
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\usetikzlibrary{positioning,automata,calc,fit,shapes,backgrounds,arrows.meta}
+\usepackage{makecell}
+
+% Miscellanea Packages
+\RequirePackage[utf8]{inputenc}
+\usepackage{ marvosym } %/Lightning
+%\usepackage{ stmaryrd } %/lightning
+%\usepackage[htt]{hyphenat}
+\usepackage{subcaption} %subfigures
+\usepackage{pgf-umlcd}
+\renewcommand{\umldrawcolor}{black}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+\raggedbottom
+
+% Bibliography
+\RequirePackage{csquotes}
+\RequirePackage[sorting=none,maxbibnames=4]{biblatex} %dashed=false to remove dashes on repeated authors.
+\bibliography{bib/bibliography.bib} %bib database(s)
+
+% Front page (package uninafrontespizio)
+\Universita{Università degli Studi di Napoli Federico II}
+\Facolta{Scuola Politecnica e delle Scienze di Base}
+\Dipartimento{Dipartimento di Ingegneria Elettrica e Tecnologie dell'Informazione}
+\CorsoDiLaurea{Corso di Laurea Triennale in Informatica}
+%\Materia{Verifica di Sistemi}
+\AnnoAccademico{2022--2023}
+\Titolo{Implementazione di una procedura di decisione per il frammento guarded in Vampire}
+\Relatore{Prof. Fabio \textsc{Mogavero}}
+\RelatoreLabel{Relatore}
+\Candidato{Francesco \textsc{Scarfato}}
+\Matricola{N86/3769}
+\Logo{logo-federico-II.pdf}
+\LogoWidth{3.5cm}
+\LogoPosition{below-uni}
+
+%custom hyphenation
+\hyphenation{ERTMS/ETCS}
+
+\usepackage[title,titletoc]{appendix}
+
+\begin{document}
+
+    \pagestyle{empty}
+    \frontmatter
+    \makefrontespizio~\clearpage
+    \makefrontespizioalt~\clearpage
+
+    \pagestyle{backmatter}
+    %\input{_chapters/0-abstract.tex}
+    
+    \clearpage
+    \tableofcontents
+
+    \mainmatter
+
+    %\input{_chapters/0-introduction.tex}
+
+    \newpage\pagestyle{main}
+
+    \input{chapters/first-chapter.tex}
+
+    %\input{_chapters/2-second-chapter.tex}
+
+    %other chapters here..
+
+    %\input{_chapters/3-conclusions.tex}
+
+    %\input{_chapters/4-appendix.tex}
+    
+    \newpage
+    \pagestyle{backmatter}
+    \printbibliography[heading=bibintoc]
+
+    %\listoffigures
+ 
+    %\listoftables
+
+\end{document}

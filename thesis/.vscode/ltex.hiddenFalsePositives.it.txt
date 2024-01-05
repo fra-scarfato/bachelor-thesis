@@ -1,0 +1,1 @@
+{"rule":"ARTICOLATA_SOSTANTIVO","sentence":"^\\QSia \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q formula in negation normal form in cui \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q non è nello scope di un\\E$"}

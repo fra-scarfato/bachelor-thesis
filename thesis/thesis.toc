@@ -1,10 +1,12 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {chapter}{\numberline {1}Panoramica su Vampire}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Cos'è \textsc {Vampire}}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Architettura di \textsc {Vampire}}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Parser}{2}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Preprocessor}{3}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Kernel}{5}{subsection.1.2.3}%
-\contentsline {chapter}{Bibliografia}{9}{chapter*.4}%
+\contentsline {chapter}{Introduzione}{1}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Panoramica su Vampire}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Cos'è \textsc {Vampire}}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Architettura di \textsc {Vampire}}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Parser}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Preprocessor}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Kernel}{6}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Frammento Guarded}{16}{chapter.2}%
+\contentsline {chapter}{Bibliografia}{17}{chapter*.10}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  5 JAN 2024 16:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  6 JAN 2024 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1551,7 +1551,7 @@ LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/sc' in size <17.28> not availa
 (Font)              Font shape `OT1/Alegreya-LF/regular/sc' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/sc' will be
 (Font)              scaled to size 18.14404pt on input line 97.
-<logo-federico-II.pdf, id=35, 501.79471pt x 499.8675pt>
+<logo-federico-II.pdf, id=43, 501.79471pt x 499.8675pt>
 File: logo-federico-II.pdf Graphic file (type pdf)
 <use logo-federico-II.pdf>
 Package pdftex.def Info: logo-federico-II.pdf  used on input line 97.
@@ -1654,12 +1654,17 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 10
 
 {d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_iszm25.enc}] [4
 
-] (./chapters/first-chapter.tex
+] (./chapters/introduction.tex
+LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/it' in size <12> not available
+(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/it' will be
+(Font)              scaled to size 12.60004pt on input line 4.
+) [1
+
+] (./chapters/first-chapter.tex [2
+
+]
 Capitolo 1.
-LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/n' in size <40> not available
-(Font)              Font shape `OT1/Alegreya-LF/bold/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/n' will be
-(Font)              scaled to size 42.00012pt on input line 1.
 LaTeX Font Info:    Font shape `OT1/AlegreyaSans-LF/m/n' in size <17.28> not available
 (Font)              Font shape `OT1/AlegreyaSans-LF/regular/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `OT1/AlegreyaSans-LF/regular/n' will be
@@ -1684,29 +1689,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Alegreya-LF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/it' in size <12> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 26.
-LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/it' will be
-(Font)              scaled to size 12.60004pt on input line 26.
- [1
-
-{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_nwaz6g.enc}] (./figures/architettura.pdf_tex
-<./figures/architettura.pdf, id=81, page=1, 669.02039pt x 49.20966pt>
+ [3{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_nwaz6g.enc}] (./figures/architettura.pdf_tex
+<./figures/architettura.pdf, id=108, page=1, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 1>
 Package pdftex.def Info: ./figures/architettura.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=82, page=2, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=109, page=2, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 2>
 Package pdftex.def Info: ./figures/architettura.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=83, page=3, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=110, page=3, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 3>
 Package pdftex.def Info: ./figures/architettura.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=84, page=4, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=111, page=4, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 4>
 Package pdftex.def Info: ./figures/architettura.pdf , page4 used on input line 62.
@@ -1734,87 +1733,121 @@ Overfull \hbox (6.2382pt too wide) in paragraph at lines 71--72
  []
 
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <10.95> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 74.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 11.49753pt on input line 74.
+(Font)              scaled to size 11.49753pt on input line 80.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 74.
+(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/it' will be
-(Font)              scaled to size 11.49753pt on input line 74.
-LaTeX Font Info:    Trying to load font information for OT1+Alegreya-OsF on input line 74.
+(Font)              scaled to size 11.49753pt on input line 80.
+LaTeX Font Info:    Trying to load font information for OT1+Alegreya-OsF on input line 80.
 (d:/Utility/texlive/2023/texmf-dist/tex/latex/alegreya/OT1Alegreya-OsF.fd
 File: OT1Alegreya-OsF.fd 2019/10/08 (autoinst) Font definitions for OT1/Alegreya-OsF.
 )
 LaTeX Font Info:    Font shape `OT1/Alegreya-OsF/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/Alegreya-OsF/regular/it' tried instead on input line 74.
+(Font)              Font shape `OT1/Alegreya-OsF/regular/it' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/Alegreya-OsF/regular/it' will be
-(Font)              scaled to size 11.49753pt on input line 74.
+(Font)              scaled to size 11.49753pt on input line 80.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Alegreya-OsF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_zbisw7.enc} <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf>] [3{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusSYM.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusMI.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusMR.enc}]
+ [4{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/alegreya/algr_zbisw7.enc} <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf>]
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <8> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 93.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 8.40002pt on input line 93.
+(Font)              scaled to size 8.40002pt on input line 94.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <6> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 93.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 94.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 6.30002pt on input line 93.
+(Font)              scaled to size 6.30002pt on input line 94.
 
-Overfull \hbox (6.67976pt too wide) in paragraph at lines 98--101
+Overfull \hbox (6.67976pt too wide) in paragraph at lines 99--102
 \OT1/Alegreya-LF/regular/n/12 (-20) in cui $[]\LS1/libertinust1math/m/n/12 .\LS1/libertinust1math/m/it/12 '; ^^Y\LS1/libertinust1math/m/n/12 /$ \OT1/Alegreya-LF/regular/n/12 (-20) in-di-ca la po-la-rit[]a del-la sotto-formula di $\LS1/libertinust1math/m/it/12 '$ \OT1/Alegreya-LF/regular/n/12 (-20) in po-si-zio-ne $\LS1/libertinust1math/m/it/12 ^^Y$\OT1/Alegreya-LF/regular/n/12 (-20) . $[]\LS1/libertinust1math/m/n/12 .\LS1/libertinust1math/m/it/12 '; ^^Y\LS1/libertinust1math/m/n/12 / =
  []
 
-[4{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusEX.enc}] [5]
+[5{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusSYM.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusMI.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusMR.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertinust1math/libusEX.enc}] [6]
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <10> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 179.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 181.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 10.50003pt on input line 179.
+(Font)              scaled to size 10.50003pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/n' in size <7> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 179.
+(Font)              Font shape `OT1/Alegreya-LF/regular/n' tried instead on input line 181.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/n' will be
-(Font)              scaled to size 7.35002pt on input line 179.
+(Font)              scaled to size 7.35002pt on input line 181.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/m/it' in size <10> not available
-(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 179.
+(Font)              Font shape `OT1/Alegreya-LF/regular/it' tried instead on input line 181.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/regular/it' will be
-(Font)              scaled to size 10.50003pt on input line 179.
+(Font)              scaled to size 10.50003pt on input line 181.
+ [7]
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/b/it' in size <12> not available
-(Font)              Font shape `OT1/Alegreya-LF/bold/it' tried instead on input line 210.
+(Font)              Font shape `OT1/Alegreya-LF/bold/it' tried instead on input line 212.
 LaTeX Font Info:    Font shape `OT1/Alegreya-LF/bold/it' will be
-(Font)              scaled to size 12.60004pt on input line 210.
- [6]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 230.
-) [7] [8
+(Font)              scaled to size 12.60004pt on input line 212.
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 235.
+ [8]
+<figures/otter.png, id=185, 612.03656pt x 214.55156pt>
+File: figures/otter.png Graphic file (type png)
+<use figures/otter.png>
+Package pdftex.def Info: figures/otter.png  used on input line 268.
+(pdftex.def)             Requested size: 429.35211pt x 150.50916pt.
+ [9] [10 <./figures/otter.png>]
+<figures/avatar.png, id=200, 633.11531pt x 267.24844pt>
+File: figures/avatar.png Graphic file (type png)
+<use figures/avatar.png>
+Package pdftex.def Info: figures/avatar.png  used on input line 308.
+(pdftex.def)             Requested size: 429.35211pt x 181.24126pt.
 
-] [9] (./thesis.aux)
+Overfull \hbox (48.91733pt too wide) in paragraph at lines 356--357
+ [][] 
+ []
+
+[11 <./figures/avatar.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[][]\OT1/Alegreya-LF/regular/n/12 (+20) - sim-pli-fiers : 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\OT1/Alegreya-LF/regular/n/12 (+20) - ge-ne-ra-tors : 
+ []
+
+
+Overfull \hbox (70.2569pt too wide) in paragraph at lines 395--396
+[][] 
+ []
+
+[12] [13] [14] [15]) (./chapters/second-chapter.tex
+Capitolo 2.
+) [16
+
+] [17] (./thesis.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 300D61399CC88DF0D3589E2789E266EA;861.
+(rerunfilecheck)             Checksum: 1CABBB430FE64198BA4B7796D85BA507;1097.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55677 strings out of 474934
- 1219875 string characters out of 5759822
- 2103904 words of memory out of 5000000
- 76045 multiletter control sequences out of 15000+600000
- 716698 words of font info for 242 fonts, out of 8000000 for 9000
+ 55902 strings out of 474934
+ 1225147 string characters out of 5759822
+ 2116476 words of memory out of 5000000
+ 76187 multiletter control sequences out of 15000+600000
+ 716723 words of font info for 270 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 132i,13n,135p,1045b,1429s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 132i,13n,135p,1045b,1877s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 <d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Bold.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-BoldItalic.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Italic.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/Alegreya-Regular.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/huerta/alegreya/AlegreyaSans-Bold.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertinust1math/LibertinusT1Math.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (15 pages, 627411 bytes).
+Output written on thesis.pdf (23 pages, 731770 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 59 named destinations out of 1000 (max. 500000)
- 70750 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 68728 words of extra memory for PDF output out of 74296 (max. 10000000)
 

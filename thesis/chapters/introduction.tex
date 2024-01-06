@@ -1,0 +1,23 @@
+\pagestyle{introduction}
+\chapter*{Introduzione}
+\addcontentsline{toc}{chapter}{Introduzione}
+Un \emph{theorem prover} è uno strumento molto importante che permette di verificare formalmente 
+sistemi software e hardware ed è strettamente collegato ai campi della logica e della matematica.
+I \emph{theorem prover} sono degli strumenti \emph{general purpose} che puntano a risolvere il maggior numero di problemi nel modo più veloce 
+ed efficiente possibile. Per migliorare questi tool, la ricerca si sta muovendo verso la definizione di 
+decisione di procedure per problemi decidibili. Una decisione di procedura è un algoritmo che verifica 
+la soddisfacibilità di un problema e termina sempre. Un sottoinsieme di problemi decidibili nella logica del primo ordine è detto 
+frammento. La ricerca di queste procedure di decisione è essenziale poiché, in alcuni casi, questi approcci possono risultare 
+più efficienti di una strategia general purpose. L'ideale sarebbe inglobare, quando è possibile, queste procedure di decisione nei 
+theorem prover e usarle quando un problema appartiene a un determinato frammento.
+
+In questa tesi viene presentata un'implementazione di una procedura di decisione per il frammento \emph{guarded} su   
+\textsc{Vampire}, uno degli \emph{automated theorem prover} più famoso ed efficiente in circolazione per la risoluzione di 
+problemi di logica del primo ordine. Il documento è diviso in quattro capitoli: 
+\begin{enumerate}
+    \item Il primo capitolo fornisce un'introduzione ai concetti base di \textsc{Vampire} propedeutici ai capitoli successivi
+    \item Il secondo capitolo formalizza tutti i concetti riguardanti il frammento \emph{guarded}
+    \item Il terzo capitolo descrive l'implementazione della procedura di decisione in \textsc{Vampire}
+    \item Il quarto capitolo presenta i risultati ottenuti dal confronto tra \textsc{Vampire} e \textsc{Vampire} con la nuova procedura di decisione
+\end{enumerate}
+

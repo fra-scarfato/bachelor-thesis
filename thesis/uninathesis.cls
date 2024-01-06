@@ -240,8 +240,8 @@
 
 % Chapters/Sections heading customization
 %\titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
-\titleformat{\chapter}[block]{\Huge\bfseries}{\fontsize{40}{50}\selectfont\centering--{\thechapter}--\\}{1ex}{\sffamily\centering\huge\bfseries}
-\titleformat{name=\chapter,numberless}[block]{\Huge\bfseries}{}{1ex}{\sffamily\centering\huge\bfseries}
+\titleformat{\chapter}[block]{\Huge\bfseries}{\selectfont{\thechapter}}{1ex}{\sffamily\huge\bfseries}
+\titleformat{name=\chapter,numberless}[block]{\Huge\bfseries}{}{1ex}{\sffamily\huge\bfseries}
 \titleformat*{\section}{\Large\sffamily\bfseries}
 \titleformat*{\subsection}{\large\sffamily\bfseries}
 \titleformat*{\subsubsection}{\sffamily\bfseries}

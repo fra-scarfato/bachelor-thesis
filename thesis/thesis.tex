@@ -30,7 +30,7 @@
 \newtheorem{property}{Proprietà}
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}
-\newtheorem{example}{Example}
+\newtheorem{example}{Esempio}
 \newtheorem*{remark}{Nota bene}
 
 % Tikz - may be removed if unneeded
@@ -51,6 +51,7 @@
 \makeatletter
 \renewcommand{\ALG@name}{Algoritmo}
 \makeatother
+\raggedbottom
 
 \usepackage{import}
 \usepackage{pdfpages}
@@ -62,7 +63,6 @@
 }
 
 \pdfsuppresswarningpagegroup=1
-\raggedbottom
 
 % Bibliography
 \RequirePackage{csquotes}
@@ -77,8 +77,8 @@
 %\Materia{Verifica di Sistemi}
 \AnnoAccademico{2022--2023}
 \Titolo{Implementazione di una procedura di decisione per il frammento guarded in Vampire}
-\Relatore{Prof. Fabio \textsc{Mogavero}}
-\RelatoreLabel{Relatore}
+\Relatore{Prof. Fabio \textsc{Mogavero}\\Prof. Massimo \textsc{Benerecetti}}
+\RelatoreLabel{Relatori}
 \Candidato{Francesco \textsc{Scarfato}}
 \Matricola{N86/3769}
 \Logo{logo-federico-II.pdf}
@@ -97,7 +97,7 @@
     \makefrontespizio~\clearpage
     \makefrontespizioalt~\clearpage
 
-    \pagestyle{backmatter}
+    %\pagestyle{backmatter}
     %\input{_chapters/0-abstract.tex}
     
     \clearpage
@@ -105,13 +105,11 @@
 
     \mainmatter
 
-    %\input{_chapters/0-introduction.tex}
+    \input{chapters/introduction.tex}
 
     \newpage\pagestyle{main}
-
     \input{chapters/first-chapter.tex}
-
-    %\input{_chapters/2-second-chapter.tex}
+    \input{chapters/second-chapter.tex}
 
     %other chapters here..
 
@@ -119,8 +117,8 @@
 
     %\input{_chapters/4-appendix.tex}
     
-    \newpage
-    \pagestyle{backmatter}
+   
+    \newpage\pagestyle{backmatter}
     \printbibliography[heading=bibintoc]
 
     %\listoffigures

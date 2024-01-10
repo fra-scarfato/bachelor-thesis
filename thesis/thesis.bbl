@@ -147,6 +147,40 @@
       \field{pages}{696\bibrangedash 710}
       \range{pages}{15}
     \endentry
+    \entry{de2003deciding}{article}{}
+      \name{author}{2}{}{%
+        {{hash=abcc05fe5dd83c94093b8cb1e4f3dbbd}{%
+           family={De\bibnamedelima Nivelle},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=401eb44f05f438bfe15809f08b5abafc}{%
+           family={De\bibnamedelima Rijke},
+           familyi={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Maarten},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{376757880316fdc56eedd7f002d49317}
+      \strng{fullhash}{376757880316fdc56eedd7f002d49317}
+      \strng{bibnamehash}{376757880316fdc56eedd7f002d49317}
+      \strng{authorbibnamehash}{376757880316fdc56eedd7f002d49317}
+      \strng{authornamehash}{376757880316fdc56eedd7f002d49317}
+      \strng{authorfullhash}{376757880316fdc56eedd7f002d49317}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Symbolic Computation}
+      \field{number}{1}
+      \field{title}{Deciding the guarded fragments by resolution}
+      \field{volume}{35}
+      \field{year}{2003}
+      \field{pages}{21\bibrangedash 58}
+      \range{pages}{38}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

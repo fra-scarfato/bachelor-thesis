@@ -188,10 +188,10 @@
 % define pagestyles
 \newpagestyle{main}[\small]{
     \setheadrule{.55pt}%
-    \sethead[\emph{\chaptername~\oldstylenums{\thechapter} - \chaptertitle}]%       even-left
+    \sethead[\chaptername~\oldstylenums{\thechapter} - \chaptertitle]%       even-left
             []%       even-center
             [\thepage]%       even-right
-            {\emph{\chaptername~\oldstylenums{\thechapter} - \chaptertitle}}% odd-left
+            {\chaptername~\oldstylenums{\thechapter} - \chaptertitle}% odd-left
             {}%                                                             odd-center
             {\thepage}%                                                     odd-right
 }
@@ -240,8 +240,8 @@
 
 % Chapters/Sections heading customization
 %\titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
-\titleformat{\chapter}[block]{\Huge\bfseries}{\selectfont{\thechapter}}{1ex}{\sffamily\huge\bfseries}
-\titleformat{name=\chapter,numberless}[block]{\Huge\bfseries}{}{1ex}{\sffamily\huge\bfseries}
+\titleformat{\chapter}[block]{\Huge\bfseries}{\selectfont{\thechapter}.}{0.5ex}{\sffamily\huge\bfseries}
+\titleformat{name=\chapter,numberless}[block]{\Huge\bfseries}{}{0ex}{\sffamily\huge\bfseries}
 \titleformat*{\section}{\Large\sffamily\bfseries}
 \titleformat*{\subsection}{\large\sffamily\bfseries}
 \titleformat*{\subsubsection}{\sffamily\bfseries}

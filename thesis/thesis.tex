@@ -3,11 +3,11 @@
     %colorlinks, 
     blacklinks,
     %palatino,
-    %libertine,
+    libertine,
     %mathpazo,
     %tgschola,
     %tgscholamathpazo,
-    alegreya
+    %alegreya
 ]{uninathesis}
 
 %\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %remove page number from toc
@@ -25,8 +25,11 @@
 \RequirePackage{amsthm}
 \RequirePackage{stmaryrd} %for \llbracket
 
+\usepackage{mdframed}
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
+\newmdtheoremenv[linewidth=1pt,nobreak=true,innertopmargin=0pt,backgroundcolor=yellow!10, skipabove=1em]{theorem}{Teorema}
+\newmdtheoremenv[linewidth=1pt,nobreak=true,innertopmargin=0pt,skipabove=1em]{lemma}{Lemma}
+
 \newtheorem{property}{Proprietà}
 \theoremstyle{definition}
 \newtheorem{definition}{Definizione}
@@ -109,7 +112,11 @@
 
     \newpage\pagestyle{main}
     \input{chapters/first-chapter.tex}
+    \clearpage
     \input{chapters/second-chapter.tex}
+    \clearpage
+    \input{chapters/third-chapter.tex}
+    \clearpage
 
     %other chapters here..
 

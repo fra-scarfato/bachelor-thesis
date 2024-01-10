@@ -1,2 +1,160 @@
 \let\cleardoublepage\relax
 \chapter{Frammento Guarded}
+Il frammento \emph{guarded} è un frammento della logica del primo ordine introdotto da Hajnal Andréka,
+István Nèmeti e Johan van Benthem. L'importanza è dovuta alla possibilità  di tradurre 
+molte logiche modali, con significative proprietà computazionali e logiche, in formule del primo ordine 
+appartenenti al frammento \emph{guarded}. \'E stato provato che questo frammento (con uguaglianza e non) 
+è decidibile in \textsc{2-EXPTIME}. 
+
+Sono state proposte numerose generalizzazioni di questo frammento in quanto
+alcune logiche modali importanti (come quella temporale) non possono essere tradotte. La generalizzazione 
+piu datata è il frammento \emph{loosely guarded} che ha dei vincoli meno stringenti sulla definizione di guardia.
+L'implementazione della procedura di decisione in questa tesi riguarda il frammento \emph{guarded} senza uguaglianza \cite{de2003deciding}.
+\begin{definition}
+    Il frammento \emph{guarded} è ricorsivamente definito come i seguenti sottoinsiemi di logica del primo ordine senza
+    uguaglianza e simboli di funzione:
+    \begin{enumerate}
+        \item $\top,\bot\in$ GF.
+        \item Se $a$ è una formula atomica, allora $a\in$ GF.
+        \item GF è chiuso rispetto a $\lnot, \land,
+        \lor, \rightarrow, \leftrightarrow$.
+        \item Sia $A\in$ GF, $a$ formula atomica tale che ogni variabile libera di $A$ occorra almeno una volta negli argomenti 
+        di $a$. Allora 
+        \begin{itemize}
+            \item $\forall\bar{x}(a \rightarrow A)\in$ GF,
+            \item $\exists\bar{x}(a \land A)\in$ GF,
+            \item $\forall\bar{x}(a \lor A)\in$ GF (negazione della precedente)
+        \end{itemize}
+        con la formula atomica $a$ definita \textbf{guardia}.
+    \end{enumerate}
+\end{definition}
+Dopo aver delineato quando una formula del primo ordine appartiene al frammento \emph{guarded}, di seguito viene 
+definito quando una clausola è \emph{guarded}.
+\begin{definition}
+    Una clausola $c$ è \emph{guarded} se soddisfa le seguenti condizioni:
+    \begin{enumerate}
+        \item Ogni termine funzionale non \emph{ground} in $c$ contiene tutte le variabili di $c$.
+        \item Se $c$ è non ground allora c'è un letterale negativo $\lnot A$ in $c$ che contiene tutte le variabili di $c$ ma 
+        non contiene termini funzionali non \emph{ground}.
+
+        Il letterale negativo $\lnot A$ è definito \textbf{guardia}.
+    \end{enumerate}
+    Se la clausola $c$ è \emph{ground}, allora è \emph{guarded}.
+\end{definition}
+\begin{definition}
+    Una insieme formato da clausole \emph{guarded} è anch'esso \emph{guarded}
+\end{definition}
+\section{Preprocessing}
+Come menzionato nel precedente capitolo \ref{sec-prepro}, il problema viene pre-processato per ottenere un insieme di clausole 
+da sottomettere all'algoritmo di risoluzione. Le operazioni di \emph{preprocessing} sono le seguenti:
+\begin{enumerate}
+    \item \emph{Negation normal form} 
+    \item $\text{\emph{Struct}}_\forall$
+    \item \emph{Skolemization}
+    \item \emph{Clausification}
+\end{enumerate} 
+L'unica operazione non ancora definita è $\text{\emph{Struct}}_\forall$.
+\begin{definition}
+    $\text{\emph{Struct}}_\forall$ è una trasformazione strutturale che è ottenuta da:
+    \begin{enumerate}
+        \item la sostituzione delle sotto-formule $\forall\bar{x}(a \rightarrow A)$, $\forall\bar{x}(a \lor A)$ che hanno 
+        $\bar{y}$ variabili libere, con un nuovo nome $\alpha(\bar{y})$
+        \item l'aggiunta della formula $\forall\bar{x}\bar{y}(\lnot a \lor \lnot\alpha \lor A)$
+    \end{enumerate}
+\end{definition}
+Queste operazioni, oltre a generare un insieme di clausole, preservano l'appartenenza delle formule al frammento \emph{guarded}.
+\begin{theorem}
+    Sia $F\in$ GF allora 
+    \begin{enumerate}
+        \item $F'=\text{NNF}(F) \in$ GF,
+        \item $F''=\text{\emph{Struct}}_\forall(F') \in$ GF,
+        \item applicando skolemization e clausification a $F''$ si ottiene un insieme di clausole guarded.
+    \end{enumerate}
+\end{theorem}
+Il teorema è dimostrato nello studio di \citeauthor{de2003deciding} in \cite{de2003deciding}.
+\section{Resolution}
+La procedure di decisione per il frammento \emph{guarded} necessita della definizione di una nuova regola di risoluzione.
+Prima di definire tale regola, è necessario stabilire: un ordinamento e dei parametri secondo cui ordinare.
+\begin{definition}
+    La \emph{Vardepth} di un termine/atomo $A$ è definita ricorsivamente come segue:
+    \[\text{\emph{Vardepth}}(A) = 
+    \begin{cases}
+        -1 & \text{se $A$ è ground}\\
+        0 & \text{se $A$ è una variabile}\\
+        \max\{1+\text{\emph{Vardepth}}(t_1), \dots, 1+\text{\emph{Vardepth}}(t_n)\} & \text{se }A=f(t_1,\dots,t_n)
+    \end{cases}\]
+\end{definition}
+\begin{definition}
+    La \emph{Vardepth} di un letterale equivale alla \emph{Vardepth} di un atomo.
+\end{definition}
+\begin{definition}
+    La \emph{Vardepth} di una clausola $c$ equivale alla \emph{Vardepth} massimale di un letterale in $c$. 
+\end{definition}
+\begin{definition}
+    Sia $A$ atomo, letterale o clausola, allora \emph{Var}$(A)$ è definito come l'insieme delle 
+    variabili che occorrono in $A$.
+\end{definition}
+Una volta definiti questi due parametri \emph{Vardepth} e \emph{Var}, è possibile definire l'ordinamento.
+\begin{definition}
+    Definiamo l'ordinamento $\prec$ sui letterali $A,B$ come segue:
+    \[A\prec B \quad\text{se}\quad(\text{\emph{Vardepth}}(A)<\text{\emph{Vardepth}}(B)) \lor (\text{\emph{Var}}(A)\subset\text{\emph{Var}}(B))\]
+\end{definition}
+Ora è possibile introdurre la nuova regola di risoluzione definita \emph{ordered resolution rule}.
+\begin{definition}
+    Sia $\prec$ ordinamento sui letterali, $\{A_1\}\cup R_1$ e $\{\lnot A_2\}\cup R_2$ clausole allora se:
+    \begin{enumerate}
+        \item $\{A_1\}\cup R_1$ e $\{\lnot A_2\}\cup R_2$ non hanno variabili in comune,
+        \item $A_1$ deve essere massimale in $R_1$ ovvero $\nexists A\in R_1 : (A_1 \prec A)$,
+        \item $A_2$ deve essere massimale in $R_2$ ovvero $\nexists A\in R_2 : (A_2 \prec A)$,
+        \item $A_1$ e $A_2$ hanno un unificatore più generale (\emph{mgu}) $\theta$,
+    \end{enumerate}
+    allora $R_1\theta \cup R_2\theta$ è chiamato $\prec$-\emph{ordered resolvent} di $\{A_1\}\cup R_1$ e $\{\lnot A_2\}\cup R_2$.
+    \begin{equation}
+        \begin{gathered}
+            \underline{\{\underline{A_1}\} \lor R_1 \quad\{\underline{\lnot A_2}\}\lor R_2}\\
+            (R_1 \lor R_2)\theta
+        \end{gathered}
+    \end{equation}
+\end{definition}
+Questa regola è una \emph{resolution rule} (\ref{res-eq}) ristretta da un'ordinamento $\prec$. \'E possibile
+definire anche una  \emph{factorization rule} (\ref{fact-eq}) ristretta.
+\begin{definition}
+    Sia $\prec$ ordinamento sui letterali, $\{A_1,A_2\}\cup R$ clausola allora se:
+    \begin{enumerate}
+        \item $A_1$ deve essere massimale in $R$ ovvero $\nexists A\in R : (A_1 \prec A)$,
+        \item $A_1$ e $A_2$ hanno un unificatore più generale (\emph{mgu}) $\theta$,
+    \end{enumerate}
+    allora $\{A_1\theta\}\cup R\theta$ è chiamato $\prec$-\emph{ordered factor} di $\{A_1,A_2\}\cup R$.
+    \begin{equation}
+        \begin{gathered}
+            \underline{\{\underline{A_1} \lor \underline{A_2}\} \lor R}\\
+            (A_1 \lor R)\theta
+        \end{gathered}
+    \end{equation}
+\end{definition}
+Nell'algoritmo di risoluzione è necessaria una \emph{resolution rule} ristretta dall'ordinamento $\prec$ poiché preserva 
+la proprietà degli $\prec$-\emph{ordered resolvent} di essere \emph{guarded}. Invece la \emph{factorization rule}
+\textbf{preserva la proprietà delle clausole di essere \emph{guarded} anche senza applicare una restrizione}.
+Tutto questo viene provato dal seguente teorema per la cui dimostrazione si rimanda a \cite{de2003deciding}:
+\begin{theorem}
+    \begin{enumerate}
+        \item Se $c_1$ e $c_2$ sono clausole \emph{guarded} allora $c$ $\prec$-\emph{ordered resolvent} di $c_1$ e $c_2$ è
+        \emph{guarded}
+        \item Se $c_1$ è una clausola \emph{guarded} allora $c$ \emph{factor} di $c_1$ è \emph{guarded}
+    \end{enumerate}
+\end{theorem}
+Un algoritmo di risoluzione, per essere definito procedura di decisione, deve terminare ed essere completo.
+
+L'algoritmo con la $\prec$-\emph{ordered resolution rule} e la \emph{factorization rule} termina perché, grazie alla restrizione
+sulla \emph{resolution rule}, è possibile derivare solo un insieme finito di clausole da un insieme finito di clausole \emph{guarded}. 
+\begin{lemma}
+    Sia $C$ un insieme finito di clausole \emph{guarded}. Se $\bar{C}$ è l'insieme generato da $C$ tramite 
+    la $\prec$-\emph{ordered resolution rule} e la \emph{factorization rule}, allora $\bar{C}$ ha dimensione finita.
+\end{lemma}
+La dimostrazione di questo lemma è possibile poiché il numero di variabili e la \emph{Vardepth} sono limitati superiormente \cite{de2003deciding}. 
+
+\begin{definition}
+    Un algoritmo di risoluzione è completo per una logica se riesce a risolvere ogni problema appartenente
+    a quella logica. 
+\end{definition}
+Nello studio di \citeauthor{de2003deciding} è presentata la dimostrazione della completezza per la procedura di decisione \cite{de2003deciding}.

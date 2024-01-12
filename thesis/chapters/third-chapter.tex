@@ -1,1 +1,48 @@
 \chapter{Implementazione della procedura}
+Come descritto nel precedente capitolo, la procedura di decisione per problemi
+appartenenti al frammento \emph{guarded} è formata da una fase di \emph{preprocessing} e 
+una fase di risoluzione con $\prec$-\emph{ordered resolution} e \emph{factorization}.
+
+Per la fase di preprocessing è stato costruito un \emph{preprocessor} per trattare problemi 
+appartenenti al frammento \emph{guarded}. Questa componente è stata implementata seguendo l'architettura 
+del \emph{preprocessor} predefinito.
+\begin{algorithm}
+    \caption{Preprocessing}
+    \begin{algorithmic}
+        \State \textbf{var} problem : sets of guarded formula
+        \State \textbf{var} result : sets of guarded clause 
+        \State problem = \emph{NNF}(problem)
+        \State problem = \emph{flatten}(problem)
+        \State problem =$\text{\emph{Struct}}_\forall$(problem)
+        \State problem = \emph{skolemize}(problem)
+        \State result = \emph{clausify}(problem)
+        \State \underline{\textbf{return} result}
+    \end{algorithmic}
+\end{algorithm}
+
+\emph{NNF, flatten, skolemize} e \emph{clausify} (descritte in \ref{sec-prepro}) sono le funzioni di 
+\textsc{Vampire} che vengono sfruttate per la trasformazione del problema.
+Invece la funzione $\text{\emph{Struct}}_\forall$ viene implementata ex-novo in quanto non è presente 
+nel sistema. La funzione è ricorsiva per sfruttare la struttura ad albero delle formule.
+
+\begin{algorithm}
+    \caption{$\text{\emph{Struct}}_\forall$}
+    \begin{algorithmic}
+        \State \textbf{var} input, new, $\alpha$ : formula
+        \State \textbf{var} $\bar{y}$ : sets of guarded clause 
+        \State $\bar{y} =$ \emph{saveFreeVariable}(input)
+        \State $\alpha =$ \emph{createNewLiteral}($\bar{y}$)
+        \State new = \emph{generateNewFormula}($alpha$,input)
+        \State \emph{addFormulaToUnits}(new)
+        \State input = $\alpha$
+        \State \underline{\textbf{return} input}
+    \end{algorithmic}
+\end{algorithm}
+Si scorre tutto l'albero e nel caso venisse trovata una formula del tipo $\forall\bar{x}(a \lor A)$ si procede come 
+descritto nella definizione \ref{struct-def}:
+\begin{enumerate}
+    \item si sostituisce la formula con un nuovo predicato $\alpha(\bar{y})$
+    \item si aggiunge la formula $\forall \bar{x}\bar{y}(\lnot a \lor \alpha \lor A)$
+\end{enumerate}
+
+

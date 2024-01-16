@@ -38,7 +38,7 @@
 
 % Tikz - may be removed if unneeded
 \RequirePackage{tikz}
-\RequirePackage{pgfplots}
+\usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \usetikzlibrary{positioning,automata,calc,fit,shapes,backgrounds,arrows.meta}
 \usepackage{makecell}
@@ -50,9 +50,18 @@
 %\usepackage[htt]{hyphenat}
 \usepackage{subcaption} %subfigures
 \usepackage{pgf-umlcd}
+\usepackage{wrapfig}
+\usepackage{csvsimple}
 \renewcommand{\umldrawcolor}{black}
 \makeatletter
 \renewcommand{\ALG@name}{Algoritmo}
+\algnewcommand\algorithmicswitch{\textbf{switch}}
+\algnewcommand\algorithmiccase{\textbf{case}}
+% New "environments"
+\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\algorithmicswitch\ #1\ \algorithmicdo}{\algorithmicend\ \algorithmicswitch}%
+\algdef{SE}[CASE]{Case}{EndCase}[1]{\algorithmiccase\ #1}{\algorithmicend\ \algorithmiccase}%
+\algtext*{EndSwitch}%
+\algtext*{EndCase}%
 \makeatother
 \raggedbottom
 
@@ -94,7 +103,6 @@
 \usepackage[title,titletoc]{appendix}
 
 \begin{document}
-
     \pagestyle{empty}
     \frontmatter
     \makefrontespizio~\clearpage
@@ -117,6 +125,7 @@
     \clearpage
     \input{chapters/third-chapter.tex}
     \clearpage
+    \input{chapters/fourth-chapter.tex}
 
     %other chapters here..
 

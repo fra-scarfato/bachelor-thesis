@@ -181,6 +181,32 @@
       \field{pages}{21\bibrangedash 58}
       \range{pages}{38}
     \endentry
+    \entry{Sut17}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3a2c76d8fd8658b09543596c5079402f}{%
+           family={Sutcliffe},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a2c76d8fd8658b09543596c5079402f}
+      \strng{fullhash}{3a2c76d8fd8658b09543596c5079402f}
+      \strng{bibnamehash}{3a2c76d8fd8658b09543596c5079402f}
+      \strng{authorbibnamehash}{3a2c76d8fd8658b09543596c5079402f}
+      \strng{authornamehash}{3a2c76d8fd8658b09543596c5079402f}
+      \strng{authorfullhash}{3a2c76d8fd8658b09543596c5079402f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Automated Reasoning}
+      \field{number}{4}
+      \field{title}{{The TPTP Problem Library and Associated Infrastructure. From CNF to TH0, TPTP v6.4.0}}
+      \field{volume}{59}
+      \field{year}{2017}
+      \field{pages}{483\bibrangedash 502}
+      \range{pages}{20}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

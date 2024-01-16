@@ -75,7 +75,7 @@ Il teorema è dimostrato nello studio di \citeauthor{de2003deciding} in \cite{de
 \section{Resolution}
 La procedure di decisione per il frammento \emph{guarded} necessita della definizione di una nuova regola di risoluzione.
 Prima di definire tale regola, è necessario stabilire: un ordinamento e dei parametri secondo cui ordinare.
-\begin{definition}
+\begin{definition}\label{var-def}
     La \emph{Vardepth} di un termine/atomo $A$ è definita ricorsivamente come segue:
     \[\text{\emph{Vardepth}}(A) = 
     \begin{cases}
@@ -95,7 +95,7 @@ Prima di definire tale regola, è necessario stabilire: un ordinamento e dei par
     variabili che occorrono in $A$.
 \end{definition}
 Una volta definiti questi due parametri \emph{Vardepth} e \emph{Var}, è possibile definire l'ordinamento.
-\begin{definition}
+\begin{definition}\label{ord-def}
     Definiamo l'ordinamento $\prec$ sui letterali $A,B$ come segue:
     \[A\prec B \quad\text{se}\quad(\text{\emph{Vardepth}}(A)<\text{\emph{Vardepth}}(B)) \lor (\text{\emph{Var}}(A)\subset\text{\emph{Var}}(B))\]
 \end{definition}

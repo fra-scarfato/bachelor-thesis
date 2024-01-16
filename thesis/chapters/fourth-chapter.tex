@@ -1,0 +1,353 @@
+\chapter{Risultati sperimentali}
+In questo capitolo vengono presentati i risultati sperimentali del confronto 
+tra \textsc{Vampire} originale e \textsc{Vampire} con la nuova procedura di decisione.
+
+Per gli esperimenti sono stati utilizzati i problemi della libreria TPTP versione 8.2.0 \cite{Sut17}.
+I problemi presi in esame sono privi di uguaglianza, poiché la procedura di decisione tratta 
+solo questo tipo di problemi. 
+\'E possibile dividere i problemi in due insiemi:
+uno comprende quelli composti da formule generiche di logica del primo ordine (FOF), mentre l'altro 
+comprende i problemi composti da clausole (CNF).
+\begin{table}[H]
+    \begin{center}
+    \caption{Numero di problemi}
+    \begin{tabular}{ccc}
+        \toprule % <-- Toprule here
+        &\textbf{FOF} & \textbf{CNF}\\
+        \midrule % <-- Midrule here
+        Senza equality & 1969 & 2274\\
+        \bottomrule % <-- Bottomrule here
+        \textbf{\emph{Guarded}} & \textbf{52} & \textbf{62}\\
+    \end{tabular}
+    \label{tab:prob}
+\end{center}
+\end{table} 
+Entrambi gli insiemi sono stati dati in input 
+al classificatore (capitolo \ref{class}) e il risultato è quello riportato in tabella \ref{tab:prob}:
+52 problemi di tipo FOF su 1969 e 62 problemi di tipo CNF su 2274 sono \emph{guarded}.
+7 di questi 52 problemi di tipo FOF non vengono presi in considerazione nei grafici seguenti, in quanto 
+non possono essere risolti in un tempo limite stabilito. Di seguito viene fornita una numerazione 
+dei problemi FOF e CNF in modo da rendere più chiara la lettura dei grafici.
+\noindent\begin{table}[H]
+    \caption{Numerazione dei problemi FOF}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{cccccc}
+            \csvautotabular{data/problem.csv} &
+            \csvautotabular{data/problem2.csv} &
+            \csvautotabular{data/problem3.csv}
+        \end{tabular}}
+        
+\end{table}
+\begin{table}[H]
+    \caption{Numerazione dei problemi CNF}
+    \resizebox{\linewidth}{!}{
+        \begin{tabular}{cccccccc}
+            \csvautotabular{data/problem-cnf.csv} &
+            \csvautotabular{data/problem-cnf2.csv} &
+            \csvautotabular{data/problem-cnf3.csv} & 
+            \csvautotabular{data/problem-cnf4.csv} 
+        \end{tabular}}
+        
+\end{table}
+Nei test, \textsc{Vampire} con la nuova procedura di decisione è indicato con \textsc{Guarded}.
+I primi test sono stati eseguiti con le seguenti opzioni di \textsc{Vampire}:
+\begin{center}
+    \verb|--sa otter -t 10m -m 8000|    
+\end{center}
+L'algoritmo di saturazione scelto è \emph{otter}, il tempo massimo di timeout è 10 minuti 
+e il limite massimo di memoria occupabile è 8000 Mb.
+\section{Problemi FOF}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            ylabel={Tempo (s)},
+            legend style={at={(0.5,1)},       
+            anchor=north,legend columns=-1},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                %yshift={-mod(\ticknum,2)*0.1cm}, 
+                font = \small, rotate=70, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/1-vampire-time.dat};
+        \addplot[color=blue]table{data/1-guarded-time.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Tempo impiegato da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi FOF}
+\end{figure}
+Dai primi test sui problemi FOF emerge che, nella maggior parte dei problemi, \textsc{Guarded} è efficiente
+tanto quanto \textsc{Vampire} in termini di tempo. La differenza tra i due, essendo nell'ordine dei millisecondi,
+non è significativa. 
+Ci sono alcune eccezioni: i problemi MED011+1 (n.5) e NLP263+1 (n.6) sono a favore di
+\textsc{Vampire} rispettivamente di circa 10 e 18 secondi, mentre il problema SYO525+1.018 (n.45) è a favore di \textsc{Guarded} di circa 12 secondi.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            ylabel={Memoria (Kb)},
+            legend style={at={(0.5,1)},       
+            anchor=north,legend columns=-1},
+            every y tick scale label/.style={
+                at={(0.07,1)},anchor=north east,inner sep=0pt},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                %yshift={-mod(\ticknum,2)*0.1cm}, 
+                font = \small, rotate=70, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/1-vampire-mem.dat};
+        \addplot[color=blue]table{data/1-guarded-mem.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Memoria occupata da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi FOF}
+\end{figure}
+
+\textsc{Vampire} e \textsc{Guarded} sono molto simili anche in termini di memoria occupata per la risoluzione di un problema.
+L' unica eccezione rilevante 
+è il problema NLP263+1 (n.6) in cui \textsc{Guarded} occupa $6.7\times10^5$ Kb di memoria, mentre \textsc{Vampire} solo $5.2\times10^5$ Kb.\\\\
+Alla fine di questa batteria di test, l'analisi ha posto particolare attenzione alle eccezioni. 
+\begin{description}
+    \item[Memoria:] La tendenza di \textsc{Guarded} ad occupare più memoria in alcuni problemi proseguirà anche nei prossimi test
+    poiché, in problemi complessi e di grandi dimensioni, la trasformazione strutturale 
+    $\text{\emph{Struct}}_\forall$ aggiunge nuove formule del tipo $\forall\bar{x}\bar{y}(\lnot a \lor \lnot\alpha \lor A)$ 
+    quindi occupa molto più spazio rispetto a \textsc{Vampire}.
+    \item[Tempo:] Nelle eccezioni in cui \textsc{Vampire} impiega meno tempo, è utilizzata
+    una tecnica di \emph{preprocessing} detta \emph{unused predicate definition removal}.
+    Una definizione di un predicato è una formula del tipo 
+    \[\forall(X_1,\dots,X_n) : p(X_1, \dots, X_n) \leftrightarrow F\]
+    in cui $p$ predicato non risulta in $F$. 
+    Con questa tecnica \textsc{Vampire} si può comportare in 3 modi:
+    \begin{enumerate}
+        \item se $p$ è presente nel resto del problema solo in forma positiva, allora $\leftrightarrow$ della definizione
+        viene sostituito da $\rightarrow$;
+        \item se $p$ non è presente nel resto del problema, allora la definizione può essere eliminata;
+        \item altrimenti la definizione non viene modificata
+    \end{enumerate}
+    In tal modo \textsc{Vampire} riesce a risolvere i problemi FOF in modo più rapido.
+\end{description}
+
+Nei prossimi test, la tecnica di \emph{unused predicate definition removal} (updr) 
+verrà disattivata da \textsc{Vampire} infatti le opzioni saranno:
+\begin{center}
+    \verb|-updr off --sa otter -t 10m -m 8000|    
+\end{center}
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            title style={align=center},
+            ylabel={Tempo (s)},
+            legend style={at={(0.5,1)},       
+            anchor=north,legend columns=-1},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                %yshift={-mod(\ticknum,2)*0.1cm}, 
+                font = \small, rotate=70, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/2-vampire-time.dat};
+        \addplot[color=blue]table{data/2-guarded-time.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Tempo impiegato da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi FOF con \emph{updr} disattivata}
+\end{figure}
+
+Con la disattivazione della \emph{updr}, le prestazioni di \textsc{Vampire} peggiorano significativamente. 
+Infatti, in questo modo \textsc{Vampire} impiega più tempo di \textsc{Guarded}, con una 
+differenza di circa 10 secondi nel problema MED011+1 (n.5) e di circa 20 secondi in NLP263+1 (n.6). In questi test \textsc{Vampire}
+impiega circa 20 secondi in più nel problema MED011+1 (n.5) e circa 38 secondi in più nel problema NLP263+1 (n.6) rispetto alla batteria di 
+test precedente.\\\\
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            title style={align=center},
+            xlabel={Problema},
+            ylabel={Memoria (Kb)},
+            legend style={at={(0.5,1)},       
+            anchor=north,legend columns=-1},
+            every y tick scale label/.style={
+                at={(0.07,1)},anchor=north east,inner sep=0pt},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                %yshift={-mod(\ticknum,2)*0.1cm}, 
+                font = \small, rotate=70, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/2-vampire-mem.dat};
+        \addplot[color=blue]table{data/2-guarded-mem.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Memoria occupata da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi FOF con \emph{updr} disattivata}
+\end{figure}
+
+
+Disattivando l'\emph{updr}, la quantità di memoria occupata da \textsc{Vampire} per il problema NLP263+1 aumenta al punto 
+da superare quella utilizzata da \textsc{Guarded}. Nonostante ciò, la differenza non è da considerare significativa.
+
+\section{Problemi CNF}
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            ylabel={Tempo (s)},
+            legend style={at={(0.7,1)},       
+            anchor=north,legend columns=-1},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                yshift={-mod(\ticknum,2)*0.35cm}, 
+                font = \small, rotate=90, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/1-cnf-vampire-time.dat};
+        \addplot[color=blue]table{data/1-cnf-guarded-time.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Tempo impiegato da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi CNF}
+\end{figure}
+
+
+Dai test sui problemi CNF emergono gli stessi risultati dei precedenti test sui problemi FOF: nella maggior parte dei problemi, \textsc{Guarded} è efficiente
+quanto \textsc{Vampire}, sia in termini di tempo che di memoria. In questo caso, la differenza è ancora minore rispetto ai problemi FOF.
+L'unica eccezione è il problema PUZ036-1.005 (n.25) in cui \textsc{Vampire} impiega circa 0,2 secondi e occupa 1100 Kb, mentre \textsc{Guarded}
+circa 4 secondi e 15000 Kb.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            ylabel={Memoria (Kb)},
+            legend style={at={(0.7,1)},       
+            anchor=north,legend columns=-1},
+            every y tick scale label/.style={
+                at={(0.07,1)},anchor=north east,inner sep=0pt},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                yshift={-mod(\ticknum,2)*0.35cm}, 
+                font = \small, rotate=70, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/1-cnf-vampire-mem.dat};
+        \addplot[color=blue]table{data/1-cnf-guarded-mem.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Memoria occupata da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi CNF}
+\end{figure}
+
+Alla fine di questi primi test sui problemi CNF, è stata effettuata l'analisi sul problema PUZ036-1.005 (n.25).
+\textsc{Vampire}, nell'algoritmo di saturazione, utilizza la \emph{forward subsumption},
+un'inferenza che fa parte delle \emph{forward simplification} (capitolo \ref{sec-kernel}) utile per eliminare le ridondanze.
+Questa tecnica permette a \textsc{Vampire} di essere più veloce ed efficiente.
+
+Nei prossima batteria di test, la tecnica di \emph{forward subsumption} (fs) verrà disattivata da \textsc{Vampire} 
+infatti le opzioni saranno:
+\begin{center}
+    \verb|-fs off --sa otter -t 10m -m 8000|    
+\end{center}
+Si noti che i test sono stati effettuati anche con \emph{updr} disattivata, ma
+non stati riportati i risultati poiché non c'era nessun cambiamento significativo. Lo stesso 
+vale anche per l'opzione \emph{fs} nei problemi FOF. Infatti, su questi problemi, sono stati 
+eseguiti i test anche con \emph{fs} disattivata ma i risultati non hanno portato a nessun cambiamento rilevante.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            title style={align=center},
+            ylabel={Tempo (s)},
+            legend style={at={(0.7,1)},       
+            anchor=north,legend columns=-1},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                yshift={-mod(\ticknum,2)*0.35cm}, 
+                font = \small, rotate=90, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/3-cnf-vampire-time.dat};
+        \addplot[color=blue]table{data/3-cnf-guarded-time.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Tempo impiegato da \textsc{Vampire} e \textsc{Guarded} per risolvere problemi CNF con \emph{forward subsumption} disattivata per entrambi}
+\end{figure}
+
+Con la disattivazione della \emph{forward subsumption}, \textsc{Vampire} peggiora sia in termini 
+di tempo che di memoria occupata nel problema PUZ036-1.005 (n.25). La differenza di tempo tra \textsc{Vampire}
+e \textsc{Guarded} si assottiglia molto in questo problema, infatti è di circa mezzo secondo.
+
+\begin{figure}[H]
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            xlabel={Problema},
+            title style={align=center},
+            ylabel={Memoria (Kb)},
+            legend style={at={(0.7,1)},       
+            anchor=north,legend columns=-1},
+            every y tick scale label/.style={
+                at={(0.07,1)},anchor=north east,inner sep=0pt},
+            xtick=data,
+            axis x line=bottom,     
+            axis y line=left,
+            xmajorgrids=true,     
+            grid style=dashed,
+            xtick align=outside,
+            x tick label style = {
+                yshift={-mod(\ticknum,2)*0.35cm}, 
+                font = \small, rotate=90, align = center},
+        ]
+        \legend{\textsc{Vampire}, \textsc{Guarded}}
+        \addplot[color=red]table{data/3-cnf-vampire-mem.dat};
+        \addplot[color=blue]table{data/3-cnf-guarded-mem.dat};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Memoria occupata da \textsc{Vampire} e \textsc{Guarded} \\per risolvere problemi CNF con \emph{forward subsumption} disattivata per entrambi}
+\end{figure}
+
+Con la disattivazione della \emph{forward subsumption}, \textsc{Vampire} e \textsc{Guarded} occupano  
+circa la stessa quantità di memoria.
+

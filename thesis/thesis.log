@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  16 JAN 2024 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.21)  27 JAN 2024 09:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1724,7 +1724,7 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/LinuxLibertineT-TLF/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
-<logo-federico-II.pdf, id=75, 501.79471pt x 499.8675pt>
+<logo-federico-II.pdf, id=79, 501.79471pt x 499.8675pt>
 File: logo-federico-II.pdf Graphic file (type pdf)
 <use logo-federico-II.pdf>
 Package pdftex.def Info: logo-federico-II.pdf  used on input line 108.
@@ -1827,66 +1827,66 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 11
 {d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_edcawa.enc}] [4
 
 ] (./chapters/introduction.tex
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 4.
-) [1
-
-{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc}] (./chapters/first-chapter.tex [2
-
-]
-Capitolo 1.
-LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 12.
-(d:/Utility/texlive/2023/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
+LaTeX Font Info:    Trying to load font information for TS1+LinuxLibertineT-TLF on input line 7.
+ (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 12.
+(Font)              scaled to size 12.0pt on input line 7.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 7.
+ [1
+
+{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc}])
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 121.
+ [2] (./chapters/first-chapter.tex
+Capitolo 1.
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 20.
+(Font)              scaled to size 17.28pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 20.
+(Font)              scaled to size 17.28pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/b/sc' will be
-(Font)              scaled to size 17.28pt on input line 20.
+(Font)              scaled to size 17.28pt on input line 2.
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/LinuxBiolinumT-TLF/b/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
- (./figures/architettura.pdf_tex
-<./figures/architettura.pdf, id=136, page=1, 669.02039pt x 49.20966pt>
+(./figures/architettura.pdf_tex
+<./figures/architettura.pdf, id=152, page=1, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 1>
 Package pdftex.def Info: ./figures/architettura.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=137, page=2, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=153, page=2, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 2>
 Package pdftex.def Info: ./figures/architettura.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=138, page=3, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=154, page=3, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 3>
 Package pdftex.def Info: ./figures/architettura.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
-<./figures/architettura.pdf, id=139, page=4, 669.02039pt x 49.20966pt>
+<./figures/architettura.pdf, id=155, page=4, 669.02039pt x 49.20966pt>
 File: ./figures/architettura.pdf Graphic file (type pdf)
 <use ./figures/architettura.pdf, page 4>
 Package pdftex.def Info: ./figures/architettura.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 429.35211pt x 31.58116pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 65--30
+Underfull \hbox (badness 10000) in paragraph at lines 65--12
 
  []
 
-[3{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_ep5ow4.enc}]
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 33.
+(Font)              scaled to size 14.4pt on input line 15.
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 33.
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 38.
- (d:/Utility/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
+(Font)              scaled to size 14.4pt on input line 15.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 20.
+(d:/Utility/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1894,143 +1894,145 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (5.83824pt too wide) in paragraph at lines 67--68
+Overfull \hbox (5.83824pt too wide) in paragraph at lines 49--50
 [][] 
  []
 
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 76.
-LaTeX Font Info:    Trying to load font information for OT1+LinuxLibertineT-TOsF on input line 76.
-(d:/Utility/texlive/2023/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TOsF.fd
+[3
+
+{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_ep5ow4.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc} <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf>]
+LaTeX Font Info:    Trying to load font information for OT1+LinuxLibertineT-TOsF on input line 70.
+ (d:/Utility/texlive/2023/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TOsF.fd
 File: OT1LinuxLibertineT-TOsF.fd 2017/03/20 (autoinst) Font definitions for OT1/LinuxLibertineT-TOsF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TOsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 76.
+(Font)              scaled to size 10.95pt on input line 70.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TOsF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [4{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_lmduqq.enc}{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc} <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf> <./figures/architettura.pdf>] [5] [6]
+ [4{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_lmduqq.enc}] [5]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 174.
+(Font)              scaled to size 10.0pt on input line 156.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 174.
+(Font)              scaled to size 7.3pt on input line 156.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 174.
+(Font)              scaled to size 5.5pt on input line 156.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 174.
+(Font)              size <5> substituted on input line 156.
 
 
 LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 174.
+(Font)              size <5> substituted on input line 156.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 174.
-[7]
+(Font)              scaled to size 10.0pt on input line 156.
+[6]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 12.0pt on input line 205.
- [8{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_ks2ukx.enc}]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 229.
-<figures/otter.png, id=221, 612.03656pt x 214.55156pt>
+(Font)              scaled to size 12.0pt on input line 187.
+ [7{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_ks2ukx.enc}]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 212.
+<figures/otter.png, id=224, 612.03656pt x 214.55156pt>
 File: figures/otter.png Graphic file (type png)
 <use figures/otter.png>
-Package pdftex.def Info: figures/otter.png  used on input line 262.
+Package pdftex.def Info: figures/otter.png  used on input line 245.
 (pdftex.def)             Requested size: 429.35211pt x 150.50916pt.
- [9] [10 <./figures/otter.png>]
-<figures/avatar.png, id=237, 633.11531pt x 267.24844pt>
+ [8] [9 <./figures/otter.png>]
+<figures/avatar.png, id=244, 633.11531pt x 267.24844pt>
 File: figures/avatar.png Graphic file (type png)
 <use figures/avatar.png>
-Package pdftex.def Info: figures/avatar.png  used on input line 302.
+Package pdftex.def Info: figures/avatar.png  used on input line 285.
 (pdftex.def)             Requested size: 429.35211pt x 181.24126pt.
 
-Overfull \hbox (3.05885pt too wide) in paragraph at lines 340--340
+Overfull \hbox (3.05885pt too wide) in paragraph at lines 323--323
  []\OT1/LinuxLibertineT-TLF/b/n/12 (-20) SimplifyingGeneratingInference[] 
  []
 
 
-Overfull \hbox (48.51736pt too wide) in paragraph at lines 350--351
+Overfull \hbox (48.51736pt too wide) in paragraph at lines 333--334
  [][] 
  []
 
-[11 <./figures/avatar.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[10 <./figures/avatar.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
 [][]\OT1/LinuxLibertineT-TLF/m/n/12 (+20) - sim-pli-fiers : 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--388
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
 \OT1/LinuxLibertineT-TLF/m/n/12 (+20) - ge-ne-ra-tors : 
  []
 
 
-Overfull \hbox (24.3315pt too wide) in paragraph at lines 389--390
+Overfull \hbox (24.3315pt too wide) in paragraph at lines 372--373
 [][] 
  []
 
-[12] [13]
-Overfull \hbox (13.32417pt too wide) in paragraph at lines 420--427
+[11] [12]
+Overfull \hbox (13.32417pt too wide) in paragraph at lines 403--410
 \OT1/LinuxLibertineT-TLF/m/n/12 (-20) la fun-zio-ne [][]\OT1/lmtt/m/n/12 setGeneratingInferenceEngine() []\OT1/LinuxLibertineT-TLF/m/n/12 (-20) e un [][]\OT1/lmtt/m/n/12 ImmediateSimplificationEngine
  []
 
-[14]) [15] (./chapters/second-chapter.tex
-Capitolo 2.
-[16
+[13]) [14
+
+] (./chapters/second-chapter.tex [15
 
 ]
-Package mdframed Info: mdframed works in twoside mode on input line 66.
+Package mdframed Info: mdframed works in twoside mode on input line 61.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 66.
- [17] [18]
-Package mdframed Info: mdframed works in twoside mode on input line 139.
+(mdframed)              on input line 61.
+ [16]
+Package mdframed Info: mdframed works in twoside mode on input line 134.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 139.
-Package mdframed Info: mdframed works in twoside mode on input line 150.
+(mdframed)              on input line 134.
+ [17]
+Package mdframed Info: mdframed works in twoside mode on input line 145.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 150.
-) [19] (./chapters/third-chapter.tex
-Capitolo 3.
+(mdframed)              on input line 145.
+) [18] (./chapters/third-chapter.tex
+Capitolo 2.
 (./figures/architettura-2.pdf_tex
-<./figures/architettura-2.pdf, id=342, page=1, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=349, page=1, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 1>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=343, page=2, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=350, page=2, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 2>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=344, page=3, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=351, page=3, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 3>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=345, page=4, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=352, page=4, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 4>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=346, page=5, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=353, page=5, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 5>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page5 used on input line 64.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=347, page=6, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=354, page=6, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 6>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page6 used on input line 66.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=348, page=7, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=355, page=7, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 7>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page7 used on input line 68.
 (pdftex.def)             Requested size: 429.35211pt x 133.50156pt.
-<./figures/architettura-2.pdf, id=349, page=8, 644.00922pt x 200.24673pt>
+<./figures/architettura-2.pdf, id=356, page=8, 644.00922pt x 200.24673pt>
 File: ./figures/architettura-2.pdf Graphic file (type pdf)
 <use ./figures/architettura-2.pdf, page 8>
 Package pdftex.def Info: ./figures/architettura-2.pdf , page8 used on input line 70.
@@ -2041,57 +2043,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--7
  []
 
 (./figures/architettura-3.pdf_tex
-<./figures/architettura-3.pdf, id=350, page=1, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=357, page=1, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 1>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=351, page=2, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=358, page=2, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 2>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=352, page=3, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=359, page=3, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 3>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=353, page=4, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=360, page=4, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 4>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=354, page=5, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=361, page=5, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 5>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page5 used on input line 64.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=355, page=6, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=362, page=6, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 6>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page6 used on input line 66.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=356, page=7, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=363, page=7, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 7>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page7 used on input line 68.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=357, page=8, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=364, page=8, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 8>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page8 used on input line 70.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=358, page=9, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=365, page=9, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 9>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page9 used on input line 72.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=359, page=10, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=366, page=10, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 10>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page10 used on input line 74.
 (pdftex.def)             Requested size: 429.35211pt x 152.98662pt.
-<./figures/architettura-3.pdf, id=360, page=11, 665.7767pt x 237.22127pt>
+<./figures/architettura-3.pdf, id=367, page=11, 665.7767pt x 237.22127pt>
 File: ./figures/architettura-3.pdf Graphic file (type pdf)
 <use ./figures/architettura-3.pdf, page 11>
 Package pdftex.def Info: ./figures/architettura-3.pdf , page11 used on input line 77.
@@ -2101,30 +2103,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--17
 
  []
 
-[20
+[19
 
  <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf> <./figures/architettura-2.pdf>] (./figures/tree.pdf_tex
-<./figures/tree.pdf, id=372, page=1, 431.05763pt x 336.7479pt>
+<./figures/tree.pdf, id=380, page=1, 431.05763pt x 336.7479pt>
 File: ./figures/tree.pdf Graphic file (type pdf)
 <use ./figures/tree.pdf, page 1>
 Package pdftex.def Info: ./figures/tree.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 429.35211pt x 335.43163pt.
-<./figures/tree.pdf, id=373, page=2, 431.05763pt x 336.7479pt>
+<./figures/tree.pdf, id=381, page=2, 431.05763pt x 336.7479pt>
 File: ./figures/tree.pdf Graphic file (type pdf)
 <use ./figures/tree.pdf, page 2>
 Package pdftex.def Info: ./figures/tree.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 429.35211pt x 335.43163pt.
-<./figures/tree.pdf, id=374, page=3, 431.05763pt x 336.7479pt>
+<./figures/tree.pdf, id=382, page=3, 431.05763pt x 336.7479pt>
 File: ./figures/tree.pdf Graphic file (type pdf)
 <use ./figures/tree.pdf, page 3>
 Package pdftex.def Info: ./figures/tree.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 429.35211pt x 335.43163pt.
-<./figures/tree.pdf, id=375, page=4, 431.05763pt x 336.7479pt>
+<./figures/tree.pdf, id=383, page=4, 431.05763pt x 336.7479pt>
 File: ./figures/tree.pdf Graphic file (type pdf)
 <use ./figures/tree.pdf, page 4>
 Package pdftex.def Info: ./figures/tree.pdf , page4 used on input line 62.
 (pdftex.def)             Requested size: 429.35211pt x 335.43163pt.
-<./figures/tree.pdf, id=376, page=5, 431.05763pt x 336.7479pt>
+<./figures/tree.pdf, id=384, page=5, 431.05763pt x 336.7479pt>
 File: ./figures/tree.pdf Graphic file (type pdf)
 <use ./figures/tree.pdf, page 5>
 Package pdftex.def Info: ./figures/tree.pdf , page5 used on input line 68.
@@ -2134,7 +2136,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--46
 
  []
 
-[21 <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf>] [22 <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf>]
+[20 <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf> <./figures/architettura-3.pdf>] [21 <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf> <./figures/tree.pdf>]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/scit' will be
 (Font)              scaled to size 12.0pt on input line 92.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
@@ -2147,96 +2149,105 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/LinuxLibertineT-TLF/m/sc/6.6'.
 (microtype)             Ignoring protrusion settings for this character.
- [23{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_hmhe76.enc}]
-<figures/literal-iterator.png, id=403, 526.21594pt x 307.1475pt>
+ [22{d:/Utility/texlive/2023/texmf-dist/fonts/enc/dvips/libertine/lbtn_hmhe76.enc}]
+<figures/literal-iterator.png, id=411, 526.21594pt x 307.1475pt>
 File: figures/literal-iterator.png Graphic file (type png)
 <use figures/literal-iterator.png>
 Package pdftex.def Info: figures/literal-iterator.png  used on input line 121.
 (pdftex.def)             Requested size: 429.35211pt x 250.6206pt.
- [24 <./figures/literal-iterator.png>] [25] [26] [27]
+ [23 <./figures/literal-iterator.png>] [24] [25] [26]
 Overfull \vbox (87.0957pt too high) has occurred while \output is active []
 
- [28] [29] [30]) [31] (./chapters/fourth-chapter.tex
-Capitolo 4.
-[32
+ [27] [28] [29]) [30] (./chapters/fourth-chapter.tex
+Capitolo 3.
+[31
 
-] [33]
+] [32]
 PGFPlots: reading {data/1-vampire-time.dat}
 PGFPlots: reading {data/1-guarded-time.dat}
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 82.
+(Font)              scaled to size 8.0pt on input line 83.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.1pt on input line 82.
+(Font)              scaled to size 6.1pt on input line 83.
 
-Overfull \hbox (5.99341pt too wide) in paragraph at lines 83--84
+Overfull \hbox (5.99341pt too wide) in paragraph at lines 84--85
  [][] 
  []
 
 PGFPlots: reading {data/1-vampire-mem.dat}
 PGFPlots: reading {data/1-guarded-mem.dat}
 
-Overfull \hbox (8.65741pt too wide) in paragraph at lines 116--117
+Overfull \hbox (8.65741pt too wide) in paragraph at lines 117--118
 [][] 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 120--125
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 121--126
 
  []
 
-[35]
+[34]
 PGFPlots: reading {data/2-vampire-time.dat}
 PGFPlots: reading {data/2-guarded-time.dat}
 
-Overfull \hbox (5.99341pt too wide) in paragraph at lines 173--174
+Overfull \hbox (5.99341pt too wide) in paragraph at lines 174--175
 [][] 
  []
 
 PGFPlots: reading {data/2-vampire-mem.dat}
 PGFPlots: reading {data/2-guarded-mem.dat}
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--209
+Underfull \hbox (badness 10000) in paragraph at lines 178--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--209
+Underfull \hbox (badness 10000) in paragraph at lines 178--210
 
  []
 
-[36]
+[35]
 PGFPlots: reading {data/1-cnf-vampire-time.dat}
 PGFPlots: reading {data/1-cnf-guarded-time.dat}
 
-Overfull \hbox (6.3689pt too wide) in paragraph at lines 238--239
+Overfull \hbox (6.3689pt too wide) in paragraph at lines 239--240
+[][] 
+ []
+
+[36]
+PGFPlots: reading {data/1-cnf-vampire-mem.dat}
+PGFPlots: reading {data/1-cnf-guarded-mem.dat}
+
+Overfull \hbox (8.65817pt too wide) in paragraph at lines 273--274
 [][] 
  []
 
 [37]
-PGFPlots: reading {data/1-cnf-vampire-mem.dat}
-PGFPlots: reading {data/1-cnf-guarded-mem.dat}
+PGFPlots: reading {data/3-cnf-vampire-time.dat}
+PGFPlots: reading {data/3-cnf-guarded-time.dat}
 
-Overfull \hbox (8.65817pt too wide) in paragraph at lines 272--273
+Overfull \hbox (6.3689pt too wide) in paragraph at lines 315--316
 [][] 
  []
 
 [38]
-PGFPlots: reading {data/3-cnf-vampire-time.dat}
-PGFPlots: reading {data/3-cnf-guarded-time.dat}
-
-Overfull \hbox (6.3689pt too wide) in paragraph at lines 314--315
-[][] 
- []
-
-[39]
 PGFPlots: reading {data/3-cnf-vampire-mem.dat}
 PGFPlots: reading {data/3-cnf-guarded-mem.dat}
 
-Overfull \hbox (5.99692pt too wide) in paragraph at lines 347--348
+Overfull \hbox (5.99692pt too wide) in paragraph at lines 348--349
 [][] 
  []
 
-[40]) [41] [42] (./thesis.aux)
+[39] [40]) (./chapters/conclusions.tex
+Capitolo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--10
+
+ []
+
+) [41
+
+] [42] (./thesis.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -2247,17 +2258,17 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.36998pt have occurred.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0599A7963B494C8306AB019F546C1164;2154.
+(rerunfilecheck)             Checksum: A1194A0F426CC6E87F33EEFA1FE35E48;2212.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60191 strings out of 474934
- 1305577 string characters out of 5759822
- 2195599 words of memory out of 5000000
- 79966 multiletter control sequences out of 15000+600000
- 714881 words of font info for 540 fonts, out of 8000000 for 9000
+ 60226 strings out of 474934
+ 1306611 string characters out of 5759822
+ 2194982 words of memory out of 5000000
+ 79980 multiletter control sequences out of 15000+600000
+ 716660 words of font info for 550 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  132i,20n,135p,1045b,2257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2267,10 +2278,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 <d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTBI.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/txexs.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsym.pfb><d:/Utility/texlive/2023/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on thesis.pdf (48 pages, 779419 bytes).
+Output written on thesis.pdf (48 pages, 784999 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 524 compressed objects within 6 object streams
- 188 named destinations out of 1000 (max. 500000)
- 128309 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 540 compressed objects within 6 object streams
+ 191 named destinations out of 1000 (max. 500000)
+ 128317 words of extra memory for PDF output out of 128383 (max. 10000000)
 

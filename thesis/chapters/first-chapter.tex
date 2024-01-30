@@ -1,24 +1,6 @@
-\chapter{Vampire theorem prover}
-In questo capitolo viene presentato il theorem prover \textsc{Vampire}, la sua architettura e alcune
-delle caratteristiche più importanti.\\
-\textsc{Vampire} è un sistema che permette di provare la validità di teoremi (matematici e non) di logica del primo ordine. 
-Il linguaggio di programmazione usato è C++ e la prima versione è stata sviluppata principalmente 
-da Andrei Voronkov e Krystof Hoder tra il 1993 e il 1995 all'Università di Manchester. Dopo il 1995, 
-il progetto è stato sospeso e verrà ripreso nel 1998. Dal '98 vengono implementate numerose versioni e, 
-ancora oggi, proseguono gli sviluppi. \textsc{Vampire} ha vinto circa 45 titoli in diverse divisioni 
-della CASC (CADE ATP System Competition) che è il campionato mondiale per gli ATP (Automated Theorem Prover) \cite{kovacs2013first,riazanov2002design}.
-Alcune delle principali caratteristiche del sistema sono:
-\begin{itemize}
-    \item la velocità
-    \item la portabilità sulle piattaforme più comuni
-    \item la semplicità dell'utilizzo
-    \item è dotato di strategie di ricerca con risorse limitate
-    \item supporta numerose sintassi in input
-    \item la possibilità di parallelizzare, i vari tentativi di prova del problema, su più processori
-    \item può produrre, in base alle opzioni selezionate, output molto dettagliati 
-\end{itemize}
+\chapter{Background}\label{first-c}
 \section{Architettura di \textsc{Vampire}}
-\textsc{Vampire} ha un'architettura complessa ma, analizzandola ad alto livello, è possibile riconoscere tre moduli 
+L'\emph{automated theorem prover} \textsc{Vampire} ha un'architettura complessa ma, analizzandola ad alto livello, è possibile riconoscere tre moduli 
 principali:
 \begin{enumerate}
     \item \emph{parser}
@@ -98,18 +80,18 @@ più veloce possibile. Di seguito sono descritti solo i passaggi fondamentali de
     \end{definition}
     Questa tecnica viene adottata solo se il numero di clausole generate supera una certa soglia. Infatti, in 
     \textsc{Vampire}, nella classe \verb|Naming|, è presente un attributo \emph{threshold} che indica proprio questo limite.
-    \item[VII step] \emph{NNF} $\longrightarrow$ Il \emph{preprocessor} trasforma le formule in \emph{negation normal form}.
+    \item[VII step] \emph{NNF}: Il \emph{preprocessor} trasforma le formule in \emph{negation normal form}.
     \begin{definition}
         Una formula è in \emph{negation normal form} se non contiene $\rightarrow,\leftrightarrow,\otimes$, e tutte le $\neg$ sono spostate, il più possibile, verso l'interno.
     \end{definition}
-    \item[VIII step] \emph{Skolemization} $\longrightarrow$ Il \emph{preprocessor} applica questa tecnica per eliminare i $\exists$ dalle formule.
+    \item[VIII step] \emph{Skolemization}: Il \emph{preprocessor} applica questa tecnica per eliminare i $\exists$ dalle formule.
     \begin{definition}
         Sia $F=\exists x\mid\varphi(y_1,\dots,y_n,x)$ formula in negation normal form allora la \emph{skolemization} si ottiene tramite la seguente sostituzione:
         \[F=\exists x\mid\varphi(y_1,\dots,y_n,x)\Rightarrow F'=\varphi(y_1,\dots,y_n,x)\{x \mapsto sk(y_1,\dots,y_n)\}\]
         in cui $\{x \mapsto sk(y_1,\dots,y_n)\}$ indica che $x$, la variabile precedentemente vincolata dal quantificatore esistenziale nella formula $F$, 
         è sostituita da una nuova funzione $sk(y_1,\dots,y_n)$, detta di Skolem, nella formula $F'$.
     \end{definition}
-    \item[IX step] \emph{Clausification} $\longrightarrow$ Il \emph{preprocessor} trasforma tutte le formule in modo da ottenere 
+    \item[IX step] \emph{Clausification}: Il \emph{preprocessor} trasforma tutte le formule in modo da ottenere 
     un insieme di clausole.
     \begin{definition}
         La \emph{clausification} è il risultato di:
@@ -132,10 +114,10 @@ Formalmente, per definire un sistema d'inferenze bisogna prima definire un \emph
 \begin{definition}
     Un ordinamento $\succ$ sui termini è detto \emph{simplification ordering} se rispetta le seguenti condizioni:
     \begin{enumerate}
-        \item $\succ$ è ben formato ovvero $\nexists t_0,t_1, \dots \text{sequenza infinita tale che } t_0 \succ t_1 \succ \dots$
-        \item $\succ$ è monotona ovvero $l \succ r \rightarrow s(l)\succ s(r)$ per tutti i termini $s,l,r$
-        \item $\succ$ è stabile per la sostituzione ovvero $l \succ r \rightarrow l\theta \succ r\theta$
-        \item $\succ$ ha la \emph{subterm property} ovvero se $r$ sottotermine di $l$ e $l\neq r$ allora $l\succ r$   
+        \item $\succ$ è \emph{ben formato} ovvero non esiste una sequenza infinita $t_0,t_1, \dots \text{tale che } t_0 \succ t_1 \succ \dots$
+        \item $\succ$ è \emph{monotona} ovvero $l \succ r \rightarrow s(l)\succ s(r)$ per tutti i termini $s,l,r$
+        \item $\succ$ è \emph{stabile} per la sostituzione ovvero $l \succ r \rightarrow l\theta \succ r\theta$
+        \item $\succ$ ha la \emph{subterm property} ovvero se $r$ è sottotermine di $l$ e $l\neq r$ allora $l\succ r$   
     \end{enumerate}
 \end{definition}
 Questa definizione è estendibile agli atomi, ai letterali e alle clausole.
@@ -221,9 +203,10 @@ In generale, un algoritmo di saturazione è composto dalle seguenti fasi:
 \end{enumerate}
 Se un'inferenza genera una clausola, allora è detta generatrice. Le inferenze generatrici 
 sono strettamente collegate alle regole di semplificazioni.
-\newpage
+
 \textsc{Vampire} implementa tre tipi di algoritmi di saturazione: \emph{limited resource strategy}(lrs), \emph{otter} e \emph{discount}.
-Tutti fanno parte della famiglia dei \emph{given clause algorithm}. L'algoritmo \ref{algo1} è semplificato ma rappresenta, ad alto livello, come lavorano quelli 
+Tutti fanno parte della famiglia dei \emph{given clause algorithm}. Lo pseudo codice riportato in algoritmo \ref{algo1} è semplificato 
+ma descrive, ad alto livello, come sono strutturati gli algoritmi
 appartenenti a questa famiglia. 
 \begin{algorithm}
     \caption{Given clause algorithm}
@@ -248,15 +231,15 @@ appartenenti a questa famiglia.
 \end{algorithm}
 
 Vengono definiti due insiemi di clausole: \emph{passive} e \emph{active}.
-L'insieme \emph{passive} contiene quelle clausole che aspettano di passare all'insieme \emph{active} e possono solo essere 
-semplificati. L'insieme \emph{active} contiene quelle clausole che sono attive e sono pronte per 
+L'insieme \emph{passive} contiene quelle clausole che attendono il passaggio all'insieme \emph{active} e possono solo essere 
+semplificate. L'insieme \emph{active} contiene quelle clausole che sono attive e sono pronte per 
 la generazione delle inferenze. Per passare da passiva ad attiva, una clausola deve essere scelta dalla funzione \emph{select()}, 
-che permette all'algoritmo di acquisire \emph{fairness}. Questa selezione è effettuata 
+che assicura l'algoritmo di soddisfare il requisito di \emph{fairness}. Questa selezione è effettuata 
 dal \emph{kernel} seguendo due parametri: età e peso della clausola. Per implementarla, vengono definite due code di priorità per i rispettivi parametri:
-nella prima hanno priorità maggiore le clausole più "vecchie", mentre, nella seconda, le clausole più "leggere". 
+nella prima hanno priorità maggiore le clausole più ``vecchie'', mentre, nella seconda, le clausole più ``leggere". 
 Una volta generata tramite l'inferenza sulla clausola selezionata e \emph{active}, la nuova clausola \emph{new} viene aggiunta a \emph{passive} solo se $new\neq\square$.
 \begin{description}
-    \item[\emph{Otter}] L'algoritmo \emph{otter}, rispetto all'algoritmo \ref{algo1}, aggiunge alcune semplificazioni in modo da ridurre il numero di clausole.
+    \item[\emph{Otter}:] L'algoritmo \emph{otter}, rispetto all'algoritmo \ref{algo1}, aggiunge alcune semplificazioni in modo da ridurre il numero di clausole.
     \begin{figure}[H]
         \centering
         \includegraphics[width=\columnwidth]{figures/otter.png}
@@ -272,9 +255,9 @@ Una volta generata tramite l'inferenza sulla clausola selezionata e \emph{active
         \item \emph{backward simplification}: un'operazione eseguita dopo che la clausola ha superato il \emph{retention test}. In questo caso, al contrario della \emph{forward simplification}, 
         si cerca di semplificare gli insiemi \emph{active} e \emph{passive} tramite la clausola generata.
     \end{itemize}
-    \item[\emph{Limited resource strategy}] L'algoritmo \emph{lrs} è una variante di \emph{otter} poiché, aggiungendo un limite di tempo,
+    \item[\emph{Limited resource strategy}:] L'algoritmo \emph{lrs} è una variante di \emph{otter} poiché, aggiungendo un limite di tempo,
     cerca di identificare quali clausole nell'insieme \emph{passive} non hanno possibilità di essere selezionate e le scarta.
-    \item[\emph{Discount}] L'algoritmo \emph{discount} non usa l'insieme \emph{passive} per effettuare semplificazioni. Questa scelta è dettata dalla cardinalità di \emph{passive} in quanto è molto maggiore di \emph{active},
+    \item[\emph{Discount}:] L'algoritmo \emph{discount} non usa l'insieme \emph{passive} per effettuare semplificazioni. Questa scelta è dettata dalla cardinalità di \emph{passive} in quanto è molto maggiore di \emph{active},
     quindi la velocità di inferenza potrebbe rallentare significativamente a causa delle semplificazioni sull'insieme \emph{passive}. 
 \end{description}
 
@@ -287,13 +270,13 @@ Il \emph{kernel} è costituito da molte parti, le principali sono:
 \end{itemize}
 Sono definite a corredo numerose strutture dati, come indici e buffer, per gestire le sostituzioni, le unificazioni, \dots
 \begin{description}
-    \item[Main loop] Contiene il vero e proprio algoritmo per la risoluzione del problema.
-    \item[Generating inference engine] \'E il cuore delle \emph{generating inferences}, in quanto funge da database per queste inferenze ed è responsabile del 
+    \item[Main loop:] Contiene il vero e proprio algoritmo per la risoluzione del problema.
+    \item[Generating inference engine:] \'E il cuore delle \emph{generating inferences}, in quanto funge da database per queste inferenze ed è responsabile del 
     loro utilizzo.
-    \item[Simplifying inference engine] \'E simile al precedente ma gestisce le inferenze che permettono le semplificazioni.
-    \item[Splitter] \'E un componente che interviene sulle clausole generate, che passano il \emph{retention test}, se sono \emph{splittable} ovvero
+    \item[Simplifying inference engine:] \'E simile al precedente ma gestisce le inferenze che permettono le semplificazioni.
+    \item[Splitter:] \'E un componente che interviene sulle clausole generate, che passano il \emph{retention test}, se sono \emph{splittable} ovvero
     \begin{definition}
-        Siano $C_1,\dots C_n$ clausole con $n\geq 2$ e tutte le clausole hanno insiemi di variabili disgiunte a coppie, 
+        Siano $C_1,\dots C_n$ clausole, con $n\geq 2$, definite su insiemi disgiunti di variabili, 
         $F=C_1 \lor \dots \lor C_n$ è detta \emph{splittable} poiché è possibile dividerla in $n$ componenti $F_1=C_1, \dots, F_n=C_n$.
     \end{definition}
     Per rendere più efficiente questa operazione, lo \emph{splitter} collabora con un SAT solver (Minisat o Z3). Questa architettura è definita AVATAR \cite{voronkov2014avatar}. 
@@ -421,14 +404,15 @@ Nella fase di configurazione del \emph{main loop}, viene inizializzato un \verb|
 vengono memorizzate tutte le inferenze tramite la funzione \verb|addFront()| nella lista \emph{inners}.
 Una volta aggiunte tutte le regole di inferenza, viene inizializzato un \verb|CompositeSGI| che memorizza
 il \verb|CompositeGIE| nello stack \emph{generators} e altre regole di semplificazione nello stack \emph{simplifiers}.
-Nello stesso modo viene inizializzato un \verb|CompositeISE|.Alla fine, al \verb|SaturationAlgorithm| viene assegnato un generatore (ovvero il \verb|CompositeGIE|)
+Nello stesso modo viene inizializzato un \verb|CompositeISE|. Alla fine, al \verb|SaturationAlgorithm| viene assegnato un generatore (ovvero il \verb|CompositeGIE|)
 tramite la funzione \verb|setGeneratingInferenceEngine()| e un \verb|ImmediateSimplificationEngine| tramite la funzione 
 apposita. 
+\clearpage
 \begin{example}
     Di seguito viene riportato un algoritmo riassuntivo, definendo un algoritmo di saturazione di tipo \emph{otter} con un \emph{superposition inference system} come visto 
 nella definizione \ref{supdef}:
 \begin{algorithm}
-    \caption{Esempio semplificato per definire un algoritmo di saturazione in \textsc{Vampire}}
+    \caption{Esempio semplificato di configurazione di un algoritmo di saturazione in \textsc{Vampire}}
     \begin{algorithmic}
         \State \textbf{var} salg : \verb|SaturationAlgorithm|
         \State \textbf{var} gie : \verb|CompositeGIE|
@@ -449,7 +433,6 @@ nella definizione \ref{supdef}:
     \end{algorithmic}
 \end{algorithm}
 \end{example}
-La trattazione è stata limitata a una semplificazione di \textsc{Vampire}, che presenta una 
-serie di aspetti più complessi, al fine di fornire una base 
+La trattazione è stata limitata a una semplificazione di \textsc{Vampire}, al fine di fornire una base 
 per la comprensione dei concetti che verranno affrontati nei capitoli successivi. 
 

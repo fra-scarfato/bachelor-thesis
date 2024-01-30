@@ -1,19 +1,70 @@
 \pagestyle{introduction}
 \chapter*{Introduzione}
 \addcontentsline{toc}{chapter}{Introduzione}
-Un \emph{theorem prover} è un importante strumento che permette di verificare formalmente 
-sistemi software e hardware, strettamente collegato ai campi della logica e della matematica.
-I \emph{theorem prover} sono degli strumenti \emph{general purpose} che puntano a risolvere il maggior numero di problemi nel modo più veloce 
-ed efficiente possibile. Per migliorare questi sistemi, la ricerca si sta muovendo verso la definizione di 
-procedure di decisione per problemi decidibili. Una procedura di decisione è un algoritmo che verifica 
-la soddisfacibilità di un problema e arriva sempre a una terminazione. Nella logica del primo ordine, un sottoinsieme di problemi decidibili è detto 
-frammento. La ricerca di queste procedure di decisione è rilevante poiché, in alcuni casi, questi approcci possono risultare 
-più efficienti di una strategia general purpose. L'ideale sarebbe inglobare queste procedure di decisione nei 
-theorem prover, quando è possibile, e utilizzarle nel caso in cui un problema appartenga a un determinato frammento.
+La logica del primo ordine è un sistema formale che estende la logica proposizionale e comprende connettivi proposizionali,
+quantificatori, segni di punteggiatura e variabili. Uno specifico linguaggio del primo ordine è definito da:
+\begin{itemize}
+    \item un insieme finito di \emph{simboli per i predicati} in cui a ogni simbolo è associato un intero definito arietà del predicato;
+    \item un insieme finito di \emph{simboli per le funzioni} in cui a ogni simbolo è associato un intero definito arietà della funzione;  
+    \item un insieme finito di \emph{costanti}.
+\end{itemize}
+Lo studio della logica del primo ordine è fondamentale in quanto, grazie alla sua espressività,
+è possibile rappresentare concetti e relazioni complesse. Infatti, 
+permette di modellare sistemi formali per la maggior parte delle aree della logica matematica e non solo.
 
-In questa tesi viene presentata un'implementazione di una procedura di decisione per il frammento \emph{guarded} su   
-\textsc{Vampire}, uno degli \emph{automated theorem prover}, per la risoluzione di 
-problemi di logica del primo ordine, più conosciuti ed efficienti in circolazione. Nella prima parte vengono introdotte le caratteristiche base
-più importanti di \textsc{Vampire} e del frammento \emph{guarded}. Nella seconda parte viene descritta 
-l'implementazione sperimentale della procedura di decisione per questo particolare frammento. Infine, viene presentata un'analisi basata sul 
-confronto tra il software originario e la versione estesa con la procedura di decisione. 
+Prima di esporre cos'è un \emph{theorem prover}, bisogna introdurre il concetto di \emph{decidibilità} e di \emph{soddisfacibilità}. Un problema è detto \emph{decidibile} se esiste una 
+procedura di decisione tale che, dato un input, l'algoritmo termini sempre con una risposta positiva o negativa. 
+Un insieme di formule $F$ è detto \emph{soddisfacibile} se,
+per ogni formula $g\in F$, esiste un assegnamento delle variabili (interpretazione booleana) di $g$ tale che la formula sia vera. 
+Il problema di determinare se è possibile trovare un'interpretazione booleana per rendere l'insieme $F$ soddisfacibile è detto
+problema della soddisfaciblità (SAT). Questo problema è decidibile per formule della logica proposizionale, ma indecidibile per formule 
+della logica del primo ordine. 
+
+Un dimostratore automatico o \emph{theorem prover} è uno strumento software che prova a verificare la validità di un problema ma non risolve il problema dell'indecidibilità.
+I \emph{theorem prover} sono strumenti \emph{general purpose} che puntano a risolvere il maggior numero di problemi nel modo più veloce 
+ed efficiente possibile. Vengono maggiormente impiegati in campo accademico e in campo industriale per la verifica formale di sistemi hardware e software.
+\textsc{Vampire} è uno degli \emph{automated theorem prover} per la risoluzione di 
+problemi di logica del primo ordine, più conosciuti ed efficienti in circolazione.
+Il linguaggio di programmazione usato per implementarlo è C++. La prima versione è stata sviluppata principalmente 
+da Andrei Voronkov e Krystof Hoder tra il 1993 e il 1995 all'Università di Manchester. Dopo il 1995, 
+il progetto è stato sospeso e per poi esser ripreso nel 1998. \textsc{Vampire} ha vinto circa 45 titoli in diverse divisioni 
+della CASC (CADE ATP System Competition) che è il campionato mondiale per gli ATP (Automated Theorem Prover) \cite{kovacs2013first,riazanov2002design}.
+Alcune delle principali caratteristiche del sistema sono:
+\begin{itemize}
+    \item la velocità;
+    \item la portabilità sulle piattaforme più comuni;
+    \item la semplicità dell'utilizzo;
+    \item è dotato di strategie di ricerca con risorse limitate;
+    \item supporta numerose sintassi in input;
+    \item la possibilità di parallelizzare, i vari tentativi di prova del problema, su più processori;
+    \item può produrre, in base alle opzioni selezionate, output molto dettagliati. 
+\end{itemize}
+
+Come detto precedentemente, il problema dell'indecidibilità per la logica del primo ordine rimane, ed è per questo che
+la ricerca si sta concentrando sullo studio di sottoinsiemi di questa logica (frammenti) per cui sia 
+possibile stabilire una procedura di decisione. La scoperta di nuove procedure di decisione è rilevante poiché, 
+in alcuni casi, questi approcci possono risultare più efficienti di una strategia \emph{general purpose} 
+come quella del \emph{theorem prover}. 
+L'ideale sarebbe inglobare queste procedure di decisione nei 
+\emph{theorem prover}, quando è possibile, e utilizzarle nel caso in cui un problema appartenga a un determinato frammento.
+Uno di questi frammenti è quello \emph{guarded} che è un frammento della logica del primo ordine e la sua importanza 
+è dovuta alla possibilità  di tradurre molte logiche modali, con importanti proprietà computazionali 
+e di espressività, in formule del primo ordine appartenenti al frammento. Sono state proposte numerose generalizzazioni di questo 
+frammento, in quanto alcune logiche modali (come quella temporale) non possono essere tradotte in esso. La generalizzazione 
+piu datata è il frammento \emph{loosely guarded} che ha vincoli meno stringenti sulla definizione di guardia.
+
+Il frammento analizzato in questa tesi è il frammento \emph{guarded} che è decidibile grazie a una procedura di decisione, 
+definita da \citeauthor{de2003deciding}. Questa procedura di decisione sfrutta una restrizione della tecnica di \emph{resolution}
+con un nuovo ordinamento definito sui termini \cite{de2003deciding}.  
+
+L'obbiettivo di questa tesi è presentare un'implementazione di una procedura di decisione per il frammento \emph{guarded} su   
+\textsc{Vampire}, confrontare i comportamenti di \textsc{Vampire} originale e \textsc{Vampire} esteso con la procedura di decisione e 
+fornire una valutazione.  
+Nel capitolo \ref{first-c} sono introdotte le nozioni astratte 
+riguardanti l'architettura di \textsc{Vampire} e il frammento \emph{guarded} con le sue proprietà.
+Nel capitolo \ref{second-c} viene presentata l'implementazione sperimentale 
+della procedura di decisione per questo particolare frammento. 
+Nel capitolo \ref{third-c} vengono analizzate le prestazioni di \textsc{Vampire} 
+con la nuova procedura di decisione e confrontate con il sistema originario. 
+Infine, la tesi si conclude con il capitolo \ref{fourth-c}, in cui viene esposta 
+una valutazione della procedura di decisione ed eventuali approfondimenti futuri.

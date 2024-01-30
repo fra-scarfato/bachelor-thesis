@@ -1,4 +1,4 @@
-\chapter{Implementazione della procedura}
+\chapter{Implementazione della procedura}\label{second-c}
 Come descritto nel precedente capitolo, la procedura di decisione per problemi
 appartenenti al frammento \emph{guarded} è formata da una fase di \emph{preprocessing} e 
 una fase di risoluzione tramite $\prec$-\emph{ordered resolution} e \emph{factorization}. 
@@ -9,7 +9,7 @@ una fase di risoluzione tramite $\prec$-\emph{ordered resolution} e \emph{factor
 L'idea per l'implementazione della procedura è:
 \begin{enumerate}
     \item costruire un nuovo \emph{preprocessor} che trasformi le formule \emph{guarded} in clausole e sostituirlo nel sistema
-    \item implementare una nuova inferenza ($\prec$\emph{-ordered resolution}) e "iniettarla" nell'algoritmo di saturazione
+    \item implementare una nuova inferenza ($\prec$\emph{-ordered resolution}) e ``iniettarla" nell'algoritmo di saturazione
     \item eliminare tutte le inferenze non necessarie dall'algoritmo di saturazione 
 \end{enumerate}
 \begin{figure}[H]
@@ -17,7 +17,7 @@ L'idea per l'implementazione della procedura è:
     \caption{Struttura di \textsc{Vampire} dopo le modifiche}
 \end{figure}
 \section{Preprocessing}
-A proposito della fase di \emph{preprocessing}, è stato sviluppato un \emph{preprocessor} per trattare problemi 
+Per quanto riguarda la fase di \emph{preprocessing}, è stato sviluppato un \emph{preprocessor} per trattare problemi 
 appartenenti al frammento \emph{guarded}. Questa componente è stata implementata seguendo l'architettura 
 del \emph{preprocessor} predefinito di \textsc{Vampire}.
 \begin{algorithm}
@@ -40,12 +40,12 @@ del \emph{preprocessor} predefinito di \textsc{Vampire}.
 Invece le funzioni $\text{\emph{Struct}}_\forall$ e \emph{computeVarDepth} vengono implementate ex-novo in quanto non presenti 
 nel sistema. 
 
-$\text{\emph{Struct}}_\forall$ è una funzione ricorsiva per sfruttare la struttura ad albero delle formule.
+$\text{\emph{Struct}}_\forall$ è una funzione ricorsiva che sfrutta la struttura ad albero delle formule.
 \begin{figure}[H]
     \incfig{tree}
     \caption{Struttura ad albero della formula}
 \end{figure}
-L'intero albero della formula viene visitato tramite una visita post-order. Durante la visita l'algoritmo 
+L'intero albero sintattico della formula viene visitato tramite una visita post-order. Durante la visita, l'algoritmo 
 controlla se nell'intero albero sono presenti formule del tipo $\forall \bar{x}(a \lor A)$ con almeno una variabile libera.
 Nel caso venga trovata una formula in questa forma, viene applicata la trasformazione strutturale 
 $\text{\emph{Struct}}_\forall$.
@@ -144,7 +144,7 @@ In questo caso la prima funzione è iterativa, mentre la seconda è ricorsiva pe
         \EndFunction
     \end{algorithmic}
 \end{algorithm}
-Se il letterale è \emph{ground}\footnote{è un letterale privo di variabili}, la \emph{VarDepth} di \emph{lit} viene impostata a $-1$ tramite la funzione 
+Se il letterale è \emph{ground}\footnote{Un letterale è detto \emph{ground} se è privo di variabili}, la \emph{VarDepth} di \emph{lit} viene impostata a $-1$ tramite la funzione 
 \emph{setLiteralVarDepth()}.
 Nel caso non sia \emph{ground}, allora viene calcolata la massima profondità di ciascun termine esterno tramite la seconda funzione \textsc{ComputeVarDepth2}().
 Alla fine il risultato sarà la massima profondità calcolata tra tutti i termini. 
@@ -166,8 +166,8 @@ Alla fine il risultato sarà la massima profondità calcolata tra tutti i termin
     \end{algorithmic}
 \end{algorithm}
 \section{Resolution}
-La nuova inferenza implementata, $\prec$-\emph{ordered resolution}, eredita la classe \\\verb|GeneratingInferenceEngine| (figura \ref{fig:genengineclass}), 
- in modo da avere tutti i metodi necessari per essere inserita 
+La nuova inferenza implementata, denominata $\prec$-\emph{ordered resolution}, eredita la classe \\\verb|GeneratingInferenceEngine| (figura \ref{fig:genengineclass}), 
+ in modo da avere a disposizione tutti i metodi necessari per essere inserita 
 nell'algoritmo di saturazione e generare nuove clausole.
 La funzione principale di questa classe è \emph{generateClause}() che sfrutta le varie strutture 
 dati messe a disposizione da \textsc{Vampire}. 
@@ -193,8 +193,8 @@ in un altra struttura dati che comprende:
         \EndIf
     \end{algorithmic}
 \end{algorithm}
-Sia $\prec$ ordinamento definito come nella definizione \ref{ord-def},
-la funzione \emph{generateClause}() verifica se il letterale 
+Sia $\prec$ un ordinamento definito come prescritto dalla definizione \ref{ord-def}.
+La funzione \emph{generateClause}() verifica se il letterale 
 $\{A_1\}$ in $\{A_1\}\cup R_1$ e il letterale $\{\lnot A_2\}$ in $\{\lnot A_2\}\cup R_2$ sono massimali 
 (secondo l'ordinamento $\prec$) tramite la funzione \textsc{IsMaximal}() .
 Nel caso siano massimali, allora viene applicata la \emph{resolution} e l'unificazione tramite la funzione \emph{unify}().
@@ -228,9 +228,9 @@ un letterale \emph{maxLit} è massimale nella clausola ovvero:
 La funzione restituisce $\bot$ se entrambe le condizioni non sono rispettate.
 \section{Classificazione}\label{class}
 A fini sperimentali, viene implementato un classificatore per riconoscere, tra un insieme di problemi casuali,
-quali appartengono al frammento \emph{guarded}.
+quali di questi appartengono al frammento \emph{guarded}.
 Il classificatore viene richiamato dopo il \emph{parser} di \textsc{Vampire} 
-ed è composto da due funzioni principali: una per analizzare le formule generiche della logica del primo ordine e un'altra per analizzare clausole.
+ed è composto da due funzioni principali; una per analizzare le formule arbitrarie della logica del primo ordine e un'altra per analizzare clausole.
 
 La prima funzione sfrutta, come il \emph{preprocessor}, 
 la struttura ad albero della formula ed è dunque ricorsiva.

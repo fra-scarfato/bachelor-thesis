@@ -2,19 +2,20 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{Introduzione}{1}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Vampire theorem prover}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Background}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Architettura di \textsc {Vampire}}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Parser}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Parser}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Preprocessor}{4}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Kernel}{6}{subsection.1.1.3}%
-\contentsline {chapter}{\numberline {2}Frammento Guarded}{16}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Preprocessing}{17}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Resolution}{18}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Implementazione della procedura}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Preprocessing}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Resolution}{26}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Classificazione}{27}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Risultati sperimentali}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Problemi FOF}{34}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Problemi CNF}{38}{section.4.2}%
+\contentsline {section}{\numberline {1.2}Frammento Guarded}{15}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Preprocessing}{16}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Resolution}{16}{subsection.1.2.2}%
+\contentsline {chapter}{\numberline {2}Implementazione della procedura}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preprocessing}{20}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Resolution}{25}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Classificazione}{26}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Risultati sperimentali}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problemi FOF}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Problemi CNF}{37}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Conclusioni}{41}{chapter.4}%
 \contentsline {chapter}{Bibliografia}{42}{chapter*.25}%

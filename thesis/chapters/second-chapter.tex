@@ -1,14 +1,9 @@
 \let\cleardoublepage\relax
-\chapter{Frammento Guarded}
+\section{Frammento Guarded}
 Il frammento \emph{guarded} è un frammento della logica del primo ordine introdotto da Hajnal Andréka,
-István Nèmeti e Johan van Benthem. L'importanza è dovuta alla possibilità  di tradurre 
-molte logiche modali, con significative proprietà computazionali e logiche, in formule del primo ordine 
-appartenenti al frammento \emph{guarded}. \'E stato provato che questo frammento (con uguaglianza e non) 
-è decidibile in \textsc{2-EXPTIME}. 
+István Nèmeti e Johan van Benthem. \'E stato provato che questo frammento (con uguaglianza e non) 
+è decidibile in \textsc{2-EXPTIME} \cite{gradel1999restraining}. 
 
-Sono state proposte numerose generalizzazioni di questo frammento in quanto
-alcune logiche modali importanti (come quella temporale) non possono essere tradotte. La generalizzazione 
-piu datata è il frammento \emph{loosely guarded} che ha dei vincoli meno stringenti sulla definizione di guardia.
 L'implementazione della procedura di decisione in questa tesi riguarda il frammento \emph{guarded} senza uguaglianza \cite{de2003deciding}.
 \begin{definition}
     Il frammento \emph{guarded} è ricorsivamente definito come i seguenti sottoinsiemi di logica del primo ordine senza
@@ -44,7 +39,7 @@ definito quando una clausola è \emph{guarded}.
 \begin{definition}
     Una insieme formato da clausole \emph{guarded} è anch'esso \emph{guarded}
 \end{definition}
-\section{Preprocessing}
+\subsection{Preprocessing}
 Come menzionato nel precedente capitolo \ref{sec-prepro}, il problema viene pre-processato per ottenere un insieme di clausole 
 da sottomettere all'algoritmo di risoluzione. Le operazioni di \emph{preprocessing} sono le seguenti:
 \begin{enumerate}
@@ -72,9 +67,9 @@ Queste operazioni, oltre a generare un insieme di clausole, preservano l'apparte
     \end{enumerate}
 \end{theorem}
 Il teorema è dimostrato nello studio di \citeauthor{de2003deciding} in \cite{de2003deciding}.
-\section{Resolution}
+\subsection{Resolution}
 La procedure di decisione per il frammento \emph{guarded} necessita della definizione di una nuova regola di risoluzione.
-Prima di definire tale regola, è necessario stabilire: un ordinamento e dei parametri secondo cui ordinare.
+Prima di definire tale regola, è necessario stabilire un ordinamento sui termini/letterali e dei parametri secondo cui ordinare.
 \begin{definition}\label{var-def}
     La \emph{Vardepth} di un termine/atomo $A$ è definita ricorsivamente come segue:
     \[\text{\emph{Vardepth}}(A) = 

@@ -1,12 +1,13 @@
-\chapter{Risultati sperimentali}
+\chapter{Risultati sperimentali}\label{third-c}
 In questo capitolo vengono presentati i risultati sperimentali del confronto 
 tra \textsc{Vampire} originale e \textsc{Vampire} con la nuova procedura di decisione.
 
 Per gli esperimenti sono stati utilizzati i problemi della libreria TPTP versione 8.2.0 \cite{Sut17}.
-I problemi presi in esame sono privi di uguaglianza, poiché la procedura di decisione tratta 
+I problemi presi in esame sono privi di uguaglianza, poiché la procedura di decisione 
+analizzata in questa tesi tratta 
 solo questo tipo di problemi. 
 \'E possibile dividere i problemi in due insiemi:
-uno comprende quelli composti da formule generiche di logica del primo ordine (FOF), mentre l'altro 
+uno comprende quelli composti da formule della logica del primo ordine (FOF), mentre l'altro 
 comprende i problemi composti da clausole (CNF).
 \begin{table}[H]
     \begin{center}
@@ -24,9 +25,9 @@ comprende i problemi composti da clausole (CNF).
 \end{table} 
 Entrambi gli insiemi sono stati dati in input 
 al classificatore (capitolo \ref{class}) e il risultato è quello riportato in tabella \ref{tab:prob}:
-52 problemi di tipo FOF su 1969 e 62 problemi di tipo CNF su 2274 sono \emph{guarded}.
-7 di questi 52 problemi di tipo FOF non vengono presi in considerazione nei grafici seguenti, in quanto 
-non possono essere risolti in un tempo limite stabilito. Di seguito viene fornita una numerazione 
+52 problemi di tipo FOF su 1969 e 62 problemi di tipo CNF su 2274 sono \emph{guarded}
+(7 di questi 52 problemi di tipo FOF non vengono presi in considerazione nei grafici seguenti, in quanto 
+non possono essere risolti nel tempo limite stabilito). Di seguito viene fornita una numerazione 
 dei problemi FOF e CNF in modo da rendere più chiara la lettura dei grafici.
 \noindent\begin{table}[H]
     \caption{Numerazione dei problemi FOF}
@@ -142,7 +143,7 @@ Alla fine di questa batteria di test, l'analisi ha posto particolare attenzione 
 \end{description}
 
 Nei prossimi test, la tecnica di \emph{unused predicate definition removal} (updr) 
-verrà disattivata da \textsc{Vampire} infatti le opzioni saranno:
+verrà disattivata da \textsc{Vampire}. Infatti, le opzioni saranno:
 \begin{center}
     \verb|-updr off --sa otter -t 10m -m 8000|    
 \end{center}
@@ -284,7 +285,7 @@ infatti le opzioni saranno:
     \verb|-fs off --sa otter -t 10m -m 8000|    
 \end{center}
 Si noti che i test sono stati effettuati anche con \emph{updr} disattivata, ma
-non stati riportati i risultati poiché non c'era nessun cambiamento significativo. Lo stesso 
+non stati riportati i risultati poiché non c'è stato nessun cambiamento significativo dei valori. Lo stesso 
 vale anche per l'opzione \emph{fs} nei problemi FOF. Infatti, su questi problemi, sono stati 
 eseguiti i test anche con \emph{fs} disattivata ma i risultati non hanno portato a nessun cambiamento rilevante.
 
@@ -350,4 +351,4 @@ e \textsc{Guarded} si assottiglia molto in questo problema, infatti è di circa 
 
 Con la disattivazione della \emph{forward subsumption}, \textsc{Vampire} e \textsc{Guarded} occupano  
 circa la stessa quantità di memoria.
-
+\clearpage
